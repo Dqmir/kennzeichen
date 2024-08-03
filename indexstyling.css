@@ -1,0 +1,178 @@
+@font-face {
+    font-family: 'platefont';
+    src: url('fonts/EuroPlate.ttf') format('truetype');
+}
+
+body {
+  background-color: #181818;
+  color: white;
+  transition: background-color 0.5s;
+}
+
+.switch-container {
+    position: fixed;
+    top:75%;
+    left:22.5%;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 40px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 30px;
+    width: 30px;
+    left: 5px;
+    bottom: 5px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+input:checked + .slider {
+    background-color: black;
+}
+input:checked + .slider:before {
+    transform: translateX(30px);
+}
+
+#main {
+  position: absolute;
+  left: 15%;
+  top: 30%;
+  text-align: center;
+}
+
+#bundeslaendermap {
+    position: absolute;
+    left: 50%;
+}
+
+#mapImage {
+    width: 531px;
+    height: 718px;
+}
+
+.container {
+    position: fixed;
+    top: 50%;
+}
+
+.container .btn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.container .btn img {
+    width: 10px;
+    height: auto;
+}
+
+#titleblock {
+  position: absolute;
+  top: 35%;
+  left: 15%;
+  width: 50%;
+  font-family: 'platefont';
+  font-size: 50px;
+}
+
+#title1 {
+  position: absolute;
+  top: -150px;
+  left: -60px;
+  color: #666666;
+}
+
+#title2 {
+  position: absolute;
+  top: -100px;
+  left: -33px;
+  color: #ff0000;
+}
+
+#title3 {
+  position: absolute;
+  top: -50px;
+  left: -6px;
+  color: #ffcc00;
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  #main {
+    left: 10%;
+    top: 25%;
+  }
+
+  #titleblock {
+    left: 10%;
+    width: 70%;
+  }
+
+  #bundeslaendermap {
+    left: 45%;
+  }
+
+  .switch-container {
+    left: 20%;
+  }
+
+  #darkmode img {
+    left: 17.5%;
+  }
+
+  #brdlogocontainer img {
+    left: -5%;
+  }
+}
+
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  #main {
+    left: 5%;
+    top: 20%;
+  }
+
+  #titleblock {
+    left: 5%;
+    width: 80%;
+  }
+
+  #bundeslaendermap {
+    left: 40%;
+  }
+
+  .switch-container {
+    left: 15%;
+  }
+
+  #darkmode img {
+    left: 12.5%;
+  }
+
+  #brdlogocontainer img {
+    left: -2.5%;
+  }
+}
