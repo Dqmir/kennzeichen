@@ -121,6 +121,8 @@ input:checked + .slider:before {
   color: #ffcc00;
 }
 
+/*Media queries*/
+
 @media screen and (max-width: 1024px) and (orientation: landscape) {
   #main {
     left: 10%;
