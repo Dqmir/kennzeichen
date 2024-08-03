@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Niedersachsens-Trainer</title>
+      <link rel="shortcut icon" href="../images/icons/pages/Niedersachsen.png"/>
+      <style>
+          body {
+              font-family: Arial, sans-serif;
+              text-align: center;
+              padding: 50px;
+              font-weight: bold;
+          }
+          #map {
+              width: 100%;
+              height: 400px;
+              margin-top: 20px;
+          }
+      </style>
+      <link rel="stylesheet" href="styling.css">
+  </head>
+  <body>
+    <div id="main">
+
+      <h1>Zu welchem Ort gehört dieser Code?</h1>
+
+      <div id="license-plate-container">
+          <canvas id="license-plate-canvas" width="600" height="100"></canvas>
+      </div>
+
+      <div id="license-plate"></div>
+
+      <p></p>
+
+      <input type="text" id="guess" placeholder="">
+      <button onclick="checkGuess()">Einreichen</button>
+
+      <p></p>
+
+      <div id="result"></div>
+
+      <p></p>
+
+      <div id="image-container"></div>
+      <div id="button-container"></div>
+      <div id="points"></div>
+      <div id="percentage"></div>
+    </div>
+
+    <div id="darkmode">
+
+      <div class="switch-container">
+          <label class="switch">
+              <input type="checkbox" id="colorSwitch">
+              <span class="slider"></span>
+          </label>
+      </div>
+
+      <img src="../images/icons/whitesun.png" id="sun" width=40px height=40px style="position:absolute; top:2.3%; left:10%;">
+      <img src="../images/icons/whitemoon.png" id="moon" width=40px height=40px style="position:absolute; top:2.3%; left:2%;">
+    </div>
+
+    <div id="homebutton">
+
+      <div class="container">
+        <a href="../index.html">
+          <img src="../images/icons/whitehouse.png" id="house" width=40px height=40px>
+          <button class="btn"></button>
+        </a>
+      </div>
+
+    </div>
+    <script src="appni.js"></script>
+  </body>
+</html>
