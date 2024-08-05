@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Kfz-Kennzeichen Datenbank</title>
+    <link rel="stylesheet" href="lernen.css">
+  </head>
+  <body>
+    <div id="searchbox">
+      <div id="codesearch">
+        <input type="search" id="codesearch-input" placeholder="Suche nach Buchstabenkombination" autofocus>
+      </div>
+      <div id="citysearch">
+        <input type="search" id="citysearch-input" placeholder="Suche nach Ort" autofocus>
+      </div>
+      <div id="regionselector">
+        <select id="regionselector-input" placeholder="Bundesland Auswahl" autofocus>
+          <option value="Alle Bundesländer">Alle Bundesländer</option>
+          <option value="Baden-Württemberg">Baden-Württemberg</option>
+          <option value="Bayern">Bayern</option>
+          <option value="Berlin">Berlin</option>
+          <option value="Brandenburg">Brandenburg</option>
+          <option value="Bremen">Bremen</option>
+          <option value="Hamburg">Hamburg</option>
+          <option value="Hessen">Hessen</option>
+          <option value="Mecklenburg-Vorpommern">Mecklenburg-Vorpommern</option>
+          <option value="Niedersachsen">Niedersachsen</option>
+          <option value="Nordrhein-Westfalen">Nordrhein-Westfalen</option>
+          <option value="Rheinland-Pfalz">Rheinland-Pfalz</option>
+          <option value="Saarland">Saarland</option>
+          <option value="Sachsen">Sachsen</option>
+          <option value="Sachsen-Anhalt">Sachsen-Anhalt</option>
+          <option value="Schleswig-Holstein">Schleswig-Holstein</option>
+          <option value="Thüringen">Thüringen</option>
+        </select>
+      </div>
+    </div>
+    <div id="table">
+      <canvas id="license-plate-canvas" width=480px></canvas>
+    </div>
 
+    <script src="lernen.js"></script>
+  </body>
+</html>
