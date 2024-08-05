@@ -56,3 +56,10 @@ const loadCustomFont = async () => {
   await font.load();
   document.fonts.add(font);
 };
+
+
+//Quitar (hacer con enlace normal)
+function openSubpage(area)
+{
+    window.location.href = 'subpages/deutschland.html?area=' + area;
+}
