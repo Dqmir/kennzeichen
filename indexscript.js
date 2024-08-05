@@ -61,5 +61,5 @@ const loadCustomFont = async () => {
 //Quitar (hacer con enlace normal)
 function openSubpage(area)
 {
-    window.location.href = 'subpages/deutschland.html?area=' + area;
+    window.location.href = 'subpages/game/deutschland.html?area=' + area;
 }
