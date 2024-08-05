@@ -773,7 +773,7 @@ function checkGuess() {
     //To do: regexp
     let guess= String(document.querySelector('#guess').value.trim());
 
-    if(guess==="") return;
+    //if(guess==="") return;
 
     if (guess.toLowerCase() === currentPlate.city.toLowerCase()){
 
