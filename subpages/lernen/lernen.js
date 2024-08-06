@@ -1,3 +1,8 @@
+/* Javascript code for the learning module of the application */
+
+/* List of license plates (might need to be expanded in the future to account for some
+   of the special license plates that exist in Germany) */
+
 const licensePlates = [
     { code: 'A', city: 'Augsburg', kreis: 'Stadt Augsburg, Landkreis Augsburg', land: 'Bayern'},
     { code: 'AA', city: 'Aalen', kreis: 'Ostalbkreis', land: 'Baden-Württemberg'},
@@ -704,36 +709,77 @@ const licensePlates = [
     { code: 'ZZ', city: 'Zeitz', kreis: 'Burgenlandkreis', land: 'Sachsen-Anhalt'},
   ];
 
-const loadCustomFont = async () => {
-    const font = new FontFace('platefont', 'url(../../fonts/EuroPlate.ttf)');
-    await font.load();
-    document.fonts.add(font);
+// Initialization of the custom font for the license plates text
+
+const loadCustomFont = async () =>
+{
+  const font = new FontFace('platefont', 'url(../../fonts/EuroPlate.ttf)');
+  await font.load();
+  document.fonts.add(font);
 };
 
-function delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
+// Function for generating a specific license plate's images
 
 async function drawLicensePlate(ctx, code, land, x, y, width, height) {
-    await loadCustomFont();
+  await loadCustomFont();
 
-    const img = new Image();
-    img.src = '../../images/plates/' + land + '.png';
+  const img = new Image();
+  img.src = '../../images/plates/' + land + '.png';
 
-    return new Promise((resolve) => {
-        img.onload = function () {
-            ctx.drawImage(img, x, y, width, height);
-            ctx.font = '53px "platefont"';
-            ctx.fillStyle = 'black';
-            ctx.textAlign = 'center';
-            ctx.fillText(code, x + 90, y + 50);
-            resolve();
-            console.log('Image loaded:', img.src);
-        };
-    });
+  return new Promise((resolve) =>
+  {
+      img.onload = function ()
+      {
+          ctx.drawImage(img, x, y, width, height);
+          ctx.font = '53px "platefont"';
+          ctx.fillStyle = 'black';
+          ctx.textAlign = 'center';
+          ctx.fillText(code, x + 90, y + 50);
+          resolve();
+          console.log('Image loaded:', img.src);
+      };
+  });
 }
 
-async function generateLicensePlates() {
+/* Observer function which detects the intersection between the images (10% threshold)
+   with a div created in the event listener in order to allow for the generation of
+   images without too much uptime */
+
+function createObserver(ctx, imgWidth, imgHeight, gap)
+{
+  const options =
+  {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries, observer) =>
+  {
+      entries.forEach(entry =>
+        {
+          if (entry.isIntersecting)
+          {
+              const { code, land, index } = entry.target.dataset;
+              const x = 60;
+              const y = index * (imgHeight + gap);
+
+              drawLicensePlate(ctx, code, land, x, y, imgWidth, imgHeight).then(() =>
+              {
+                  observer.unobserve(entry.target);
+              });
+          }
+      });
+  }, options);
+
+  return observer;
+}
+
+/* Event listener where the canvas for all the license plates and the div for each
+   license plate are created */
+
+document.addEventListener('DOMContentLoaded', function()
+{
     const canvas = document.getElementById('license-plate-canvas');
     const ctx = canvas.getContext('2d');
 
@@ -741,19 +787,23 @@ async function generateLicensePlates() {
     const imgHeight = 60;
     const gap = 20;
 
-    canvas.height = licensePlates.length * (imgHeight + gap) - gap;
+    const totalHeight = licensePlates.length * (imgHeight + gap) - gap;
+    canvas.height = totalHeight;
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const observer = createObserver(ctx, imgWidth, imgHeight, gap);
 
-    for (let i = 0; i < licensePlates.length; i++) {
-        const x = 60;
-        const y = i * (imgHeight + gap);
+    licensePlates.forEach((plate, index) =>
+    {
+        const div = document.createElement('div');
+        div.style.position = 'absolute';
+        div.style.top = `${index * (imgHeight + gap)}px`;
+        div.style.width = '100%';
+        div.style.height = `${imgHeight}px`;
+        div.dataset.code = plate.code;
+        div.dataset.land = plate.land;
+        div.dataset.index = index;
 
-        await drawLicensePlate(ctx, licensePlates[i].code, licensePlates[i].land, x, y, imgWidth, imgHeight);
-        console.log(i);
-    }
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    generateLicensePlates();
+        canvas.parentElement.appendChild(div);
+        observer.observe(div);
+    });
 });
