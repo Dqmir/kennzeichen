@@ -720,7 +720,7 @@ const loadCustomFont = async () =>
 
 // Function for generating a specific license plate's images
 
-async function drawLicensePlate(ctx, code, land, x, y, width, height) {
+async function drawLicensePlate(ctx, code, land, kreis, city, x, y, width, height) {
   await loadCustomFont();
 
   const img = new Image();
@@ -735,6 +735,10 @@ async function drawLicensePlate(ctx, code, land, x, y, width, height) {
       ctx.fillStyle = 'black';
       ctx.textAlign = 'center';
       ctx.fillText(code, x + 90, y + 50);
+      ctx.fillStyle = 'white';
+      ctx.textAlign = 'left';
+      ctx.font = '15px Arial';
+      ctx.fillText(licensePlateString(city,kreis,land), x + 420, y + 36);
       resolve();
       //console.log('Image loaded:', img.src);
     };
@@ -751,7 +755,7 @@ function createObserver(ctx, imgWidth, imgHeight, gap)
   {
     root: null,
     rootMargin: '0px',
-    threshold: 0.1
+    threshold: 0.25
   };
 
   const observer = new IntersectionObserver((entries, observer) =>
@@ -760,11 +764,11 @@ function createObserver(ctx, imgWidth, imgHeight, gap)
       {
         if (entry.isIntersecting)
         {
-          const { code, land, index } = entry.target.dataset;
+          const { code, land, kreis, city, index } = entry.target.dataset;
           const x = 60;
           const y = index * (imgHeight + gap);
 
-          drawLicensePlate(ctx, code, land, x, y, imgWidth, imgHeight).then(() =>
+          drawLicensePlate(ctx, code, land, kreis, city, x, y, imgWidth, imgHeight).then(() =>
           {
             observer.unobserve(entry.target);
           });
@@ -773,34 +777,6 @@ function createObserver(ctx, imgWidth, imgHeight, gap)
   }, options);
 
   return observer;
-}
-
-// Filter for the license plates by region (Bundesland)
-
-function filterLicensePlatesByRegion(land)
-{
-  if (land === 'Alle Bundesländer')
-  {
-    return licensePlates;
-  }
-  else
-  {
-    return licensePlates.filter(plate => plate.land === land);
-  }
-}
-
-// Filter for the license plates by code
-
-function filterLicensePlatesByCode(query)
-{
-  return licensePlates.filter(plate => plate.code.toLowerCase().startsWith(query.toLowerCase()));
-}
-
-// Filter for the license plates by city
-
-function filterLicensePlatesByCity(city)
-{
-  return licensePlates.filter(plate => plate.city.toLowerCase().includes(city.toLowerCase()));
 }
 
 /* Function for the generation of the license plates divs necessary to interact with then
@@ -835,6 +811,8 @@ function generateFilteredLicensePlates(filteredPlates)
       div.style.height = `${imgHeight}px`;
       div.dataset.code = plate.code;
       div.dataset.land = plate.land;
+      div.dataset.kreis = plate.kreis;
+      div.dataset.city = plate.city;
       div.dataset.index = index;
 
       parent.appendChild(div);
@@ -844,27 +822,43 @@ function generateFilteredLicensePlates(filteredPlates)
 
 // Event listeners for the different filters, taking into account each input
 
-document.addEventListener('DOMContentLoaded', function()
-{
-  const initialFilteredPlates = filterLicensePlatesByCode(document.getElementById('codesearch-input').value);
-  generateFilteredLicensePlates(initialFilteredPlates);
+document.addEventListener('DOMContentLoaded', function() {
+  let codeFilter = '';
+  let cityFilter = '';
+  let regionFilter = 'Alle Bundesländer';
 
-  document.getElementById('codesearch-input').addEventListener('input', () =>
-  {
-    const filteredPlates = filterLicensePlatesByCode(document.getElementById('codesearch-input').value);
+  const applyFilters = () => {
+    const filteredPlates = licensePlates.filter(plate => {
+      const matchesCode = plate.code.toLowerCase().startsWith(codeFilter.toLowerCase());
+      const matchesCity = plate.city.toLowerCase().includes(cityFilter.toLowerCase());
+      const matchesRegion = (regionFilter === 'Alle Bundesländer' || plate.land === regionFilter);
+      return matchesCode && matchesCity && matchesRegion;
+    });
     generateFilteredLicensePlates(filteredPlates);
+  };
+
+  // Initial filter based on code input
+  codeFilter = document.getElementById('codesearch-input').value;
+  applyFilters();
+
+  document.getElementById('codesearch-input').addEventListener('input', () => {
+    codeFilter = document.getElementById('codesearch-input').value;
+    applyFilters();
   });
 
-  document.getElementById('citysearch-input').addEventListener('input', () =>
-  {
-    const filteredPlates = filterLicensePlatesByCity(document.getElementById('citysearch-input').value);
-    generateFilteredLicensePlates(filteredPlates);
+  document.getElementById('citysearch-input').addEventListener('input', () => {
+    cityFilter = document.getElementById('citysearch-input').value;
+    applyFilters();
   });
 
-  document.getElementById('regionselector-input').addEventListener('change', () =>
-  {
-    const selectedRegion = document.getElementById('regionselector-input').value;
-    const filteredPlates = filterLicensePlatesByRegion(selectedRegion);
-    generateFilteredLicensePlates(filteredPlates);
+  document.getElementById('regionselector-input').addEventListener('change', () => {
+    regionFilter = document.getElementById('regionselector-input').value;
+    applyFilters();
   });
 });
+
+function licensePlateString(city, kreis, land)
+{
+  lpstring = city + ', ' + kreis + ', ' + land;
+  return lpstring;
+}

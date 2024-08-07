@@ -42,3 +42,13 @@ body{
   overflow: hidden;
   overflow-y: auto;
 }
+
+.btn{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
