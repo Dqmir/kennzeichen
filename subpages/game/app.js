@@ -749,7 +749,7 @@ document.addEventListener('click', function(event){
         //Generar nueva matrícula (se pone encima de la anterior, o se elimina la anterior?)
         currentPlate = getRandomLicensePlate(area);
         drawLicensePlate(currentPlate.code, currentPlate.land);
-        
+
         event.target.remove();
         tryCount=0;
     }
@@ -763,7 +763,7 @@ function handleEnterKey(event) {
     } else if(event.key === 'Enter' && tryCount===1) {
         currentPlate = getRandomLicensePlate(area);
         drawLicensePlate(currentPlate.code, currentPlate.land);
-        
+
         document.querySelector('.nextQuestion').remove();
         tryCount=0;
     }
@@ -786,9 +786,9 @@ function checkGuess() {
     else {
         total +=1;
         if(currentPlate.kreis.includes('Stadt')) resultDiv.innerText = `Falsch. ${currentPlate.code} gehört zu ${currentPlate.city} in der ${currentPlate.kreis} (${currentPlate.land}).`;
-        else resultDiv.innerText = `Falsch. ${currentPlate.code} gehört zu ${currentPlate.city} im ${currentPlate.kreis} (${currentPlate.land}).`;  
+        else resultDiv.innerText = `Falsch. ${currentPlate.code} gehört zu ${currentPlate.city} im ${currentPlate.kreis} (${currentPlate.land}).`;
     };
-    
+
     showFlag();
     showButton();
     showPoints();
@@ -798,14 +798,14 @@ function checkGuess() {
 }
 
 function getRandomLicensePlate(area) {
-    
+
     let filteredPlates = [];
 
     if(area != "Deutschland"){
 
         for (possiblePlate of licensePlates) {
-            if (possiblePlate.land === area) filteredPlates.push(possiblePlate); 
-        } 
+            if (possiblePlate.land === area) filteredPlates.push(possiblePlate);
+        }
 
     } else filteredPlates = licensePlates;
 
@@ -826,7 +826,7 @@ function getRandomLicensePlate(area) {
 /*Functions for drawing license plate and updating ui*/
 
 const loadCustomFont = async () => {
-    const font = new FontFace('platefont', 'url(../fonts/EuroPlate.ttf)');
+    const font = new FontFace('platefont', 'url(../../fonts/EuroPlate.ttf)');
     await font.load();
     document.fonts.add(font);
 };
@@ -838,7 +838,7 @@ async function drawLicensePlate(code, land)
   const canvas = document.getElementById('license-plate-canvas');
   const ctx = canvas.getContext('2d');
   const img = new Image();
-  img.src = '../images/plates/'+land+'.png';
+  img.src = '../../images/plates/'+land+'.png';
 
   img.onload = function () {
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
@@ -872,12 +872,12 @@ function updatePage(area) {
     for (var i = 0; i < contentSections.length; i++) {
         contentSections[i].style.display = 'none';
     }
-  
+
     var selectedContent = document.getElementById(area + '-content');
     if (selectedContent) {
         selectedContent.style.display = 'block';
         document.title = area + "s Trainer";
-        document.getElementById('favicon').href = '../images/icons/pages/' + area + '.png';
+        document.getElementById('favicon').href = '../../images/icons/pages/' + area + '.png';
     } else {
         document.getElementById('content').innerHTML = '<p>Content not found.</p>';
     }
@@ -921,7 +921,7 @@ function showFlag()
 
   const newImage = document.createElement('img');
 
-  newImage.src = `../images/flags/${currentPlate.land}.png`;
+  newImage.src = `../../images/flags/${currentPlate.land}.png`;
 
   newImage.style.marginTop = '10px';
   newImage.style.width = '83px';
@@ -960,16 +960,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isChecked) {
             document.body.style.backgroundColor = 'white';
             document.body.style.color = 'black';
-            sunIcon.src = '../images/icons/blacksun.png';
-            moonIcon.src = '../images/icons/blackmoon.png';
-            houseIcon.src = '../images/icons/blackhouse.png';
+            sunIcon.src = '../../images/icons/blacksun.png';
+            moonIcon.src = '../../images/icons/blackmoon.png';
+            houseIcon.src = '../../images/icons/blackhouse.png';
             alertText.style.color = 'black';
         } else {
             document.body.style.backgroundColor = '#181818';
             document.body.style.color = 'white';
-            sunIcon.src = '../images/icons/whitesun.png';
-            moonIcon.src = '../images/icons/whitemoon.png';
-            houseIcon.src = '../images/icons/whitehouse.png';
+            sunIcon.src = '../../images/icons/whitesun.png';
+            moonIcon.src = '../../images/icons/whitemoon.png';
+            houseIcon.src = '../../images/icons/whitehouse.png';
             alertText.style.color = 'white';
         }
     }

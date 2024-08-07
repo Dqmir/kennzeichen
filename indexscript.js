@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const moonIcon = document.getElementById('moon');
     const title1Text = document.getElementById('title1');
     const brdlogoOp = document.getElementById('brdlogo');
+    const lernenButton = document.getElementById('lernenbtn');
 
     switchElement.addEventListener('change', () => {
         changeBackgroundColor(switchElement.checked);
@@ -17,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             moonIcon.src = 'images/icons/blackmoon.png';
             title1Text.style.color = '#000000';
             brdlogoOp.style.opacity = 0.15;
+            lernenButton.style.backgroundColor = 'black';
         } else {
             document.body.style.backgroundColor = '#181818';
             document.body.style.color = 'white';
@@ -24,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             moonIcon.src = 'images/icons/whitemoon.png';
             title1Text.style.color = '#666666';
             brdlogoOp.style.opacity = 0.75;
+            lernenButton.style.backgroundColor = '#ccc';
         }
     }
 });
@@ -61,5 +64,5 @@ const loadCustomFont = async () => {
 //Quitar (hacer con enlace normal)
 function openSubpage(area)
 {
-    window.location.href = 'subpages/deutschland.html?area=' + area;
+    window.location.href = 'subpages/game/deutschland.html?area=' + area;
 }
