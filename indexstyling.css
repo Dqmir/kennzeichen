@@ -3,6 +3,8 @@
     src: url('fonts/EuroPlate.ttf') format('truetype');
 }
 
+
+
 body {
   background-color: #181818;
   color: white;
@@ -91,7 +93,7 @@ input:checked + .slider:before {
     height: auto;
 }
 
-#titleblock {
+#titleblock{
   position: absolute;
   top: 35%;
   left: 15%;
@@ -121,62 +123,6 @@ input:checked + .slider:before {
   color: #ffcc00;
 }
 
-@media screen and (max-width: 1024px) and (orientation: landscape) {
-  #main {
-    left: 10%;
-    top: 25%;
-  }
-
-  #titleblock {
-    left: 10%;
-    width: 70%;
-  }
-
-  #bundeslaendermap {
-    left: 45%;
-  }
-
-  .switch-container {
-    left: 20%;
-  }
-
-  #darkmode img {
-    left: 17.5%;
-  }
-
-  #brdlogocontainer img {
-    left: -5%;
-  }
-}
-
-@media screen and (max-width: 768px) and (orientation: landscape) {
-  #main {
-    left: 5%;
-    top: 20%;
-  }
-
-  #titleblock {
-    left: 5%;
-    width: 80%;
-  }
-
-  #bundeslaendermap {
-    left: 40%;
-  }
-
-  .switch-container {
-    left: 15%;
-  }
-
-  #darkmode img {
-    left: 12.5%;
-  }
-
-  #brdlogocontainer img {
-    left: -2.5%;
-  }
-}
-
 #lernenbtn {
   position: absolute;
   top: 63%;
@@ -203,4 +149,111 @@ input:checked + .slider:before {
 
 #lernenbtn:focus {
   outline: none;
+}
+
+@media screen and (max-width: 1024px){
+  #main {
+    left: 10%;
+    top: 25%;
+  }
+
+  #titleblock {
+    visibility: hidden;
+  }
+
+  #bundeslaendermap {
+    left: 45%;
+  }
+
+  .switch-container {
+    left: 20%;
+  }
+
+  #darkmode img {
+    left: 17.5%;
+  }
+
+  #brdlogocontainer img {
+    left: -5%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-bottom: 30px;
+  }
+
+  header div.titleMobile{
+    width: 70%;
+    top: 0;
+    font-family: 'platefont';
+    height: 120px;
+  }
+
+  header div.titleMobile h1{
+    font-size: 30px;
+    margin-top: 10px;
+  }
+
+  header div.brdLogoMobile{
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+  }
+
+  header div.brdLogoMobile img{
+    width: 105px;
+    transform: rotate(-45deg);
+  }
+
+  main {
+    width: 100%;
+  }
+
+  /*Título flotante, pájaro: invisible*/
+  #titleblock, #brdlogocontainer{
+    visibility: hidden;
+  }
+  
+
+  div#bundeslaendermap {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    left: 0;
+  }
+
+  img#mapImage {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1.352;
+  }
+
+  #title1 {
+    position: absolute;
+    top: -150px;
+    left: -60px;
+    color: #666666;
+  }
+  
+  #title2 {
+    position: absolute;
+    top: -100px;
+    left: -33px;
+    color: #ff0000;
+  }
+  
+  #title3 {
+    position: absolute;
+    top: -50px;
+    left: -6px;
+    color: #ffcc00;
+  }
 }
