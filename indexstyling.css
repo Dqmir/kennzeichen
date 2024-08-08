@@ -3,8 +3,6 @@
     src: url('fonts/EuroPlate.ttf') format('truetype');
 }
 
-
-
 body {
   background-color: #181818;
   color: white;
@@ -49,48 +47,18 @@ body {
     transition: .4s;
     border-radius: 50%;
 }
+
 input:checked + .slider {
     background-color: black;
 }
+
 input:checked + .slider:before {
     transform: translateX(30px);
-}
-
-#main {
-  position: absolute;
-  left: 15%;
-  top: 30%;
-  text-align: center;
-}
-
-#bundeslaendermap {
-    position: absolute;
-    left: 50%;
 }
 
 #mapImage {
     width: 531px;
     height: 718px;
-}
-
-.container {
-    position: fixed;
-    top: 50%;
-}
-
-.container .btn {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-}
-
-.container .btn img {
-    width: 10px;
-    height: auto;
 }
 
 #titleblock{
@@ -152,17 +120,9 @@ input:checked + .slider:before {
 }
 
 @media screen and (max-width: 1024px){
-  #main {
-    left: 10%;
-    top: 25%;
-  }
 
   #titleblock {
     visibility: hidden;
-  }
-
-  #bundeslaendermap {
-    left: 45%;
   }
 
   .switch-container {
@@ -180,6 +140,7 @@ input:checked + .slider:before {
 
 @media screen and (max-width: 768px) {
 
+  /*Header*/
   header {
     width: 100%;
     display: flex;
@@ -213,8 +174,13 @@ input:checked + .slider:before {
     transform: rotate(-45deg);
   }
 
+  /*Main*/
   main {
     width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    row-gap: 20px;
   }
 
   /*Título flotante, pájaro: invisible*/
@@ -222,38 +188,55 @@ input:checked + .slider:before {
     visibility: hidden;
   }
   
-
-  div#bundeslaendermap {
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    left: 0;
+  #bundeslaendermap {
+    position: relative;
+    width: 75%;
+    height: fit-content;
   }
 
   img#mapImage {
+    margin-top: -2%;
     width: 100%;
     height: 100%;
     aspect-ratio: 1 / 1.352;
   }
 
-  #title1 {
-    position: absolute;
-    top: -150px;
-    left: -60px;
-    color: #666666;
+  main a{
+    position: relative;
+    width: 70%;
   }
-  
-  #title2 {
-    position: absolute;
-    top: -100px;
-    left: -33px;
-    color: #ff0000;
+
+  main a img{
+    width: 100%;
+    height: 100%;
   }
-  
-  #title3 {
-    position: absolute;
-    top: -50px;
-    left: -6px;
-    color: #ffcc00;
+
+  /*Footer*/
+
+  footer {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+  }
+
+  .switch-container {
+    position: relative;
+  }
+
+  div#darkmode {
+    display: flex;
+  }
+
+  img#sun, img#moon{
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  h1 span{
+    font-size: 0.8em;
   }
 }
