@@ -1,6 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 @font-face {
     font-family: 'platefont';
     src: url('fonts/EuroPlate.ttf') format('truetype');
+}
+
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #ccc;
 }
 
 body {
@@ -141,13 +156,6 @@ input:checked + .slider:before {
 @media screen and (max-width: 768px) {
 
   /*Header*/
-  header {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    margin-bottom: 30px;
-  }
 
   header div.titleMobile{
     width: 70%;
@@ -167,11 +175,6 @@ input:checked + .slider:before {
     flex-direction: row;
     align-items: center;
     justify-content: right;
-  }
-
-  header div.brdLogoMobile img{
-    width: 105px;
-    transform: rotate(-45deg);
   }
 
   /*Main*/
@@ -238,5 +241,20 @@ input:checked + .slider:before {
 @media screen and (max-width: 420px) {
   h1 span{
     font-size: 0.8em;
+  }
+
+  header div.titleMobile{
+    width: 60%;
+    top: 0;
+    font-family: 'platefont';
+    height: 120px;
+  }
+
+  header div.brdLogoMobile{
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
   }
 }
