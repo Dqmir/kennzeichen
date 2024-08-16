@@ -1,7 +1,9 @@
+/*Ajustes generales*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'platefont';
 }
 
 @font-face {
@@ -9,124 +11,187 @@
     src: url('fonts/EuroPlate.ttf') format('truetype');
 }
 
+/*Ajustes del mapa y botón generales*/
 body {
   background-color: #181818;
   color: white;
   transition: background-color 0.5s;
 }
 
-@media screen and (max-width: 1024px){
+#bundeslaendermap {
+  position: relative;
+  height: fit-content;
 
-  #titleblock {
-    visibility: hidden;
+  margin-top: 30px;
+  margin-left: 5px;
+}
+
+img#mapImage {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1.352;
+}
+
+main a.alleButton{
+  position: relative;
+  width: 70%;
+  margin-top: 25px;
+}
+
+main a.alleButton img{
+  width: 100%;
+  height: 100%;
+}
+
+div.menu{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+nav {
+  width: 100%;
+  background-color: #ccc;
+}
+
+
+/*Media Queries*/
+
+@media (min-width: 1024px){
+  /*Se cambia al título de Desktop*/
+  div.titleMobileDiv {
+    display: none;
   }
 
-  .switch-container {
+  /*Nav, menu*/
+  nav div.menu{
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background-color: #ccc;
+  }
+
+  nav {
+    color: #181818;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main {
+    max-width: 1000px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+  }
+
+  .titleDesktop{
+    width: 250px;
+  } 
+
+  .brdLogoContainerDesktop img{
+    width: 400px;
+    height: 400px; 
+    position: absolute;
+    top: 0;
+    left: -3.5%; 
+    opacity: 0.3; 
+    transform: rotate(-45deg);
+  }
+
+  /*Map*/
+  #bundeslaendermap {
+    width: 35%;
+    margin: 0;
+  }
+
+  main a.alleButton{
+    width: 250px;
+    position: absolute;
+    bottom: 25px;
     left: 20%;
-  }
-
-  #darkmode img {
-    left: 17.5%;
-  }
-
-  #brdlogocontainer img {
-    left: -5%;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px){
+  /*Se cambia al título de Desktop*/
+  div.titleMobileDiv {
+    display: none;
+  }
 
-  /*Header*/
+  /*Nav, menu*/
+  div.menu{
+    height: 30px;
+  }
 
-  header div.titleMobile{
-    width: 70%;
+  nav {
+    color: #181818;
+  }
+
+  nav div.menu {
+    position: fixed;
     top: 0;
-    font-family: 'platefont';
-    height: 120px;
-  }
-
-  header div.titleMobile h1{
-    font-size: 30px;
-    margin-top: 10px;
-  }
-
-  header div.brdLogoMobile{
-    width: 30%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: right;
+    z-index: 1;
+    background-color: #ccc;
   }
 
   /*Main*/
   main {
-    width: 100%;
-    display: flex;
-    flex-flow: column nowrap;width: ;
-    align-items: center;
-    row-gap: 20px;
-  }
-
-  /*Título flotante, pájaro: invisible*/
-  #titleblock, #brdlogocontainer{
-    visibility: hidden;
-  }
-  
-  #bundeslaendermap {
-    position: relative;
-    width: 75%;
-    height: fit-content;
-  }
-
-  img#mapImage {
-    margin-top: -2%;
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 1 / 1.352;
-  }
-
-  main a{
-    position: relative;
-    width: 70%;
-  }
-
-  main a img{
-    width: 100%;
-    height: 100%;
-  }
-
-  /*Footer*/
-
-  footer {
-    width: 100%;
+    margin-top: 50px;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-  }
-
-  .switch-container {
     position: relative;
   }
 
-  div#darkmode {
-    display: flex;
+  /*Desktop title*/
+  .titleDesktop{
+    width: 250px;
+  } 
+
+  .brdLogoContainerDesktop img{
+    width: 300px;
+    height: 300px; 
+    position: fixed;
+    top: 0;
+    left: -7.5%; 
+    opacity: 0.3;
   }
 
-  img#sun, img#moon{
-    position: relative;
+  /*Map*/
+  #bundeslaendermap {
+    width: 45%;
+    margin: 0;
+  }
+
+  main a.alleButton{
+    width: 250px;
+    position: absolute;
+    bottom: 25px;
+    left: 12%;
   }
 }
 
-@media screen and (max-width: 420px) {
+@media (max-width: 768px) {
+
+  /*Header*/
   h1 span{
     font-size: 25px;
   }
 
   header {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -135,34 +200,82 @@ body {
     background-color: #ccc;
   }
 
-  header div.title {
-    width: 300px;
+  header div.titleMobileDiv {
+    width: 260px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
   }
 
   header div.titleMobile{
-    width: 200px;
-    top: 0;
-    font-family: 'platefont';
+    width: 195px;
+    margin-left: 10px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+
+  header div.titleMobile h1{
+    font-size: 23px;
   }
 
   header div.brdLogoMobile{
-    width: 70px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: right;
+    width: 55px;
+    height: 60px;
+    margin-bottom: 10px;
   }
 
+  header div.brdLogoMobile img{
+    width: 100%;
+  }
+  
+  /*Nav, menu*/
   div.menu{
-    width: 300px;
+    height: 30px;
+  }
+
+  nav {
+    width: 100%;
+    display: unset;
+    background-color: #ccc;
+  }
+
+  nav div.menu {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #ccc;
+  }
+
+  /*Main*/
+  main {
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: column nowrap;
     align-items: center;
-    justify-content: space-between;
+    row-gap: 20px;
+  }
+
+  /*Título flotante, pájaro: invisible*/
+  .titleDesktop, .brdLogoContainerDesktop{
+    display: none;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 768px) {
+  #bundeslaendermap {
+  width: 60%;
+  }
+}
+
+@media (max-width: 500px) {
+  #bundeslaendermap {
+  width: 75%;
   }
 }

@@ -12,9 +12,10 @@
   <body>
 
     <header>
-      <div class="title">
+      <!-- Title (Mobile) -->
+      <div class="titleMobileDiv">
         <div class="brdLogoMobile">
-          <img src="images/brdverticallogo.png" width="100%">
+          <img src="images/brdverticallogo.png">
         </div>
         <div class="titleMobile">
           <h1 style="color: #666666">Deuschlands</h1>
@@ -22,16 +23,29 @@
           <h1 style="color: #ffcc00">Trainer</h1>
         </div>
       </div>
+    </header>
+
+    <nav>
       <div class="menu">
         <span>Home</span> 
         <span>Lernen</span>
         <span>About us</span>
       </div>
-    </header>
+    </nav>
 
     <main>
-      <!-- Clickable Map of Germany -->
 
+      <!-- Title (Desktop)-->
+      <div class="titleDesktop">
+        <h1 style="color: #666666">Deuschlands</h1>
+        <h1 style="color: #ff0000">KFZ-Kennzeichen</h1>
+        <h1 style="color: #ffcc00">Trainer</h1>
+      </div>
+      <div class="brdLogoContainerDesktop">
+        <img src="images/brdlogo.png">
+      </div>
+
+      <!-- Clickable Map of Germany -->
       <div id="bundeslaendermap">
 
         <img id="mapImage" src="images/maps/de.png" width="531" height="718" alt="Germany Map" usemap="#germanymap">
@@ -121,22 +135,10 @@
           <area shape="poly" coords="235,339,259,328,263,320,274,323,278,314,291,316,291,324,298,336,316,337,325,347,319,350,317,354,325,356,322,361,325,365,331,362,336,363,340,368,351,368,358,375,363,374,369,376,373,370,370,362,372,365,375,363,386,367,386,371,393,375,393,379,369,391,369,396,374,403,364,408,364,412,358,411,356,406,349,412,351,417,354,420,351,425,337,428,334,427,329,430,326,424,322,424,322,418,317,418,314,422,315,425,315,432,311,439,307,439,307,433,300,432,291,428,280,433,280,438,289,442,283,443,280,446,275,442,275,435,267,430,264,430,255,418,249,415,242,419,242,419,241,411,245,407,240,404,233,407,238,390,241,390,242,380,239,374,251,373,246,361,253,361,252,356,244,353,244,350,237,347,235,339" href="javascript:void(0);" onclick="openSubpage('Thüringen')" alt="Thüringen" data-hover="images/maps/th.png">
       </div>
 
-      <!-- Title (Desktop)-->
-      <div id="titleblock">
-        <div id="title1">Deuschlands</div>
-        <div id="title2">KFZ-Kennzeichen</div>
-        <div id="title3">Trainer</div>
-      </div>
-
       <!-- Alle Bundesländer Button -->
-      <a href="subpages/game/deutschland.html?area=Deutschland">
+      <a href="subpages/game/deutschland.html?area=Deutschland" class="alleButton">
         <img src="images/buttontemplate.png">
       </a>
-
-      <!-- Bundesrepublik Deutschlands Logo -->
-      <div id="brdlogocontainer">
-        <img src="images/brdlogo.png" id="brdlogo" width=300px height=300px style="position:fixed; bottom:50%; left:-7.5%; opacity:0.5; transform: rotate(15deg);">
-      </div>
 
       <script src="indexscript.js"></script>
     </main>

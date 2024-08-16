@@ -80,3 +80,21 @@ input:checked + .slider:before {
   left: -6px;
   color: #ffcc00;
 }
+
+footer .switch-container {
+  position: relative;
+}
+footer div#darkmode {
+  display: flex;
+}
+footer img#sun, img#moon{
+  position: relative;
+}
+
+#darkmode img {
+  left: 17.5%;
+}
+
+#brdlogocontainer img {
+  left: -5%;
+}
