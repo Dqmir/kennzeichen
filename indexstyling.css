@@ -9,129 +9,10 @@
     src: url('fonts/EuroPlate.ttf') format('truetype');
 }
 
-header {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: #ccc;
-}
-
 body {
   background-color: #181818;
   color: white;
   transition: background-color 0.5s;
-}
-
-.switch-container {
-    position: fixed;
-    top:75%;
-    left:22.5%;
-}
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 70px;
-    height: 40px;
-}
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 34px;
-}
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 30px;
-    width: 30px;
-    left: 5px;
-    bottom: 5px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-}
-
-input:checked + .slider {
-    background-color: black;
-}
-
-input:checked + .slider:before {
-    transform: translateX(30px);
-}
-
-#mapImage {
-    width: 531px;
-    height: 718px;
-}
-
-#titleblock{
-  position: absolute;
-  top: 35%;
-  left: 15%;
-  width: 50%;
-  font-family: 'platefont';
-  font-size: 50px;
-}
-
-#title1 {
-  position: absolute;
-  top: -150px;
-  left: -60px;
-  color: #666666;
-}
-
-#title2 {
-  position: absolute;
-  top: -100px;
-  left: -33px;
-  color: #ff0000;
-}
-
-#title3 {
-  position: absolute;
-  top: -50px;
-  left: -6px;
-  color: #ffcc00;
-}
-
-#lernenbtn {
-  position: absolute;
-  top: 63%;
-  left: 23%;
-  background-color: #ccc;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#lernenbtn .fa {
-  font-size: 24px;
-}
-
-#lernenbtn:hover {
-  background-color: black;
-}
-
-#lernenbtn:focus {
-  outline: none;
 }
 
 @media screen and (max-width: 1024px){
@@ -181,7 +62,7 @@ input:checked + .slider:before {
   main {
     width: 100%;
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column nowrap;width: ;
     align-items: center;
     row-gap: 20px;
   }
@@ -219,10 +100,8 @@ input:checked + .slider:before {
   footer {
     width: 100%;
     display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-items: center;
-    align-content: center;
+    flex-direction: row;
+    justify-content: center;
   }
 
   .switch-container {
@@ -240,21 +119,50 @@ input:checked + .slider:before {
 
 @media screen and (max-width: 420px) {
   h1 span{
-    font-size: 0.8em;
+    font-size: 25px;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #ccc;
+  }
+
+  header div.title {
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   header div.titleMobile{
-    width: 60%;
+    width: 200px;
     top: 0;
     font-family: 'platefont';
-    height: 120px;
   }
 
   header div.brdLogoMobile{
-    width: 20%;
+    width: 70px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: right;
+  }
+
+  div.menu{
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
   }
 }
