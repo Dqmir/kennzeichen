@@ -57,6 +57,14 @@ nav {
   background-color: #ccc;
 }
 
+footer {
+  width: 100%;
+}
+
+a {
+  color: white;
+}
+
 
 /*Media Queries*/
 
@@ -187,9 +195,6 @@ nav {
 @media (max-width: 768px) {
 
   /*Header*/
-  h1 span{
-    font-size: 25px;
-  }
 
   header {
     width: 100%;
