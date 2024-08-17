@@ -179,9 +179,15 @@ a {
   }
 
   /*Map*/
+  /*La anchura del bundeslaendermap debe ser proporcional a las coordenadas del mismo*/
   #bundeslaendermap {
-    width: 45%;
+    width: 239px;
     margin: 0;
+  }
+
+  /*La anchura del mapImage da igual*/
+  #mapImage {
+    width: 100px;
   }
 
   main a.alleButton{
