@@ -1,89 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Deutschlands Trainer</title>
-      <link id="favicon" rel="shortcut icon" href="../../images/icons/pages/Germany.png"/>
-      <link rel="stylesheet" href="styling.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deutschlands Trainer</title>
+    <link
+      id="favicon"
+      rel="shortcut icon"
+      href="../../images/icons/pages/Germany.png"
+    />
+    <link rel="stylesheet" href="styling.css" />
   </head>
 
   <body>
-
     <header>
-
-      <div id="darkmode">
-        <div class="switch-container">
-            <label class="switch">
-                <input type="checkbox" id="colorSwitch">
-                <span class="slider"></span>
-            </label>
-        </div>
-        <img src="../../images/icons/whitesun.png" id="sun">
-        <img src="../../images/icons/whitemoon.png" id="moon">
-      </div>
-  
-      <div class="titleMobileDiv">
-        <div class="brdLogoMobile">
-          <img src="../../images/brdverticallogo.png">
-        </div>
-        <div class="titleMobile">
-          <h1 style="color: white">Deuschlands</h1>
-          <h1 style="color: white">KFZ-Kennzeichen</h1>
-          <h1 style="color: white">Trainer</h1>
-        </div>
-      </div>
-
       <a href="../../index.html">
-        <img src="../../images/icons/whitehouse.png" id="house">
+        <div class="titleMobileDiv">
+          <div class="brdLogoMobile">
+            <img src="../../images/brdverticallogo.png">
+          </div>
+          <div class="titleMobile">
+            <h1 style="color: white">Deutschlands</h1>
+            <h1 style="color: white">KFZ-Kennzeichen</h1>
+            <h1 style="color: white">Trainer</h1>
+          </div>
+        </div>
       </a>
-      
     </header>
-    
+
+    <div id="darkmode">
+      <div class="switch-container">
+        <label class="switch">
+          <input type="checkbox" id="colorSwitch" />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="startMenu">
+      <div class="option"> OPTION 1</div>
+      <div class="option"> OPTION 2</div>
+    </div>
+
     <main>
-
-      <h1>Zu welchem Ort gehört dieser Code?</h1>
-
+      <h1 id="trainerTitle"></h1>
       <div id="license-plate-container">
-          <canvas id="license-plate-canvas" width="600" height="100"></canvas>
+        <canvas id="license-plate-canvas" width="600" height="100"></canvas>
+      </div>
+      <h2>Zu welchem Ort gehört dieser Code?</h2>
+
+      <div class="trainerContainer">
+        <input type="text" id="guess" placeholder="" autofocus />
+        <button id="checkGuess">Einreichen</button>
+  
+        <div id="result"></div>
+        <div id="image-container"></div>
+        <div id="button-container"></div>
+        <div id="points"></div>
+        <div id="percentage"></div>
       </div>
 
-      <div id="license-plate"></div>
-
-      <p></p>
-
-      <input type="text" id="guess" placeholder="" autofocus>
-      <button id="checkGuess">Einreichen</button>
-
-      <p></p>
-
-      <div id="result"></div>
-
-      <p></p>
-
-      <div id="image-container"></div>
-      <div id="button-container"></div>
-      <div id="points"></div>
-      <div id="percentage"></div>
+      <div class="bestScores">
+        <h3>Best scores</h3>
+        <div class="bestScoresContainer">
+          <div class="score">score: 1</div>
+          <div class="score">score: 1</div>
+          <div class="score">score: 1</div>
+          <div class="score">score: 1</div>
+          <div class="score">score: 1</div>
+          <div class="score">score: 1</div>
+          <div class="score">score: 1</div>
+          <div class="score">score: 1</div>
+        </div>
+      </div>
     </main>
 
     <div id="content">
-      <div id="Baden-Württemberg-content" class="content-section"> </div>
-      <div id="Bayern-content" class="content-section"> </div>
-      <div id="Berlin-content" class="content-section"> </div>
-      <div id="Brandenburg-content" class="content-section"> </div>
-      <div id="Bremen-content" class="content-section"> </div>
-      <div id="Hamburg-content" class="content-section"> </div>
-      <div id="Hessen-content" class="content-section"> </div>
-      <div id="Mecklenburg-Vorpommern-content" class="content-section"> </div>
-      <div id="Niedersachsen-content" class="content-section"> </div>
-      <div id="Nordrhein-Westfalen-content" class="content-section"> </div>
-      <div id="Rheinland-Pfalz-content" class="content-section"> </div>
-      <div id="Saarland-content" class="content-section"> </div>
-      <div id="Sachsen-content" class="content-section"> </div>
-      <div id="Sachsen-Anhalt-content" class="content-section"> </div>
-      <div id="Schleswig-Holstein-content" class="content-section"> </div>
-      <div id="Thüringen-content" class="content-section"> </div>
+      <div id="Baden-Württemberg-content" class="content-section"></div>
+      <div id="Bayern-content" class="content-section"></div>
+      <div id="Berlin-content" class="content-section"></div>
+      <div id="Brandenburg-content" class="content-section"></div>
+      <div id="Bremen-content" class="content-section"></div>
+      <div id="Hamburg-content" class="content-section"></div>
+      <div id="Hessen-content" class="content-section"></div>
+      <div id="Mecklenburg-Vorpommern-content" class="content-section"></div>
+      <div id="Niedersachsen-content" class="content-section"></div>
+      <div id="Nordrhein-Westfalen-content" class="content-section"></div>
+      <div id="Rheinland-Pfalz-content" class="content-section"></div>
+      <div id="Saarland-content" class="content-section"></div>
+      <div id="Sachsen-content" class="content-section"></div>
+      <div id="Sachsen-Anhalt-content" class="content-section"></div>
+      <div id="Schleswig-Holstein-content" class="content-section"></div>
+      <div id="Thüringen-content" class="content-section"></div>
     </div>
 
     <script src="app.js"></script>

@@ -6,16 +6,22 @@
 }
 
 @font-face {
-    font-family: 'platefont';
-    src: url('fonts/EuroPlate.ttf') format('truetype');
+  font-family: "platefont";
+  src: url("fonts/EuroPlate.ttf") format("truetype");
+}
+
+a {
+  text-decoration: none;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    font-weight: bold;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  font-weight: bold;
+  background-color: #181818;
+  color: white;
+  transition: background-color 0.5s;
 }
-
 
 /*Header*/
 header {
@@ -23,93 +29,208 @@ header {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: left;
+  border-bottom: 1px solid white;
   font-family: 'platefont';
 }
 
-img#sun , img#moon, img#house {
-    width: 40px;
-}
-
-img#moon {
-    /*Cambiar el slider*/
-    display: none;
-}
-
 header div.titleMobileDiv {
+  width: 260px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 15px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
 }
 
 header div.titleMobile{
+  width: 195px;
   margin-left: 10px;
+
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
-  column-gap: 10px;
+  justify-content: left;
 }
 
 header div.titleMobile h1{
-  font-size: 15px;
+  font-size: 20px;
 }
 
 header div.brdLogoMobile{
-  width: 40px;
-  height: 40px;
+  width: 55px;
+  height: 60px;
+  margin-bottom: 10px;
 }
 
 header div.brdLogoMobile img{
   width: 100%;
 }
 
+/*Options menu*/
+div.startMenu {
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  font-family: 'platefont';
+  display: none;
+}
+
+div.option {
+  width: 80%;
+  height: 50px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 7px 7px 5px -3px rgba(0,0,0,0.75);
+  font-size: 30px;
+  border: 1px solid grey;
+  color: #181818;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 /*Main*/
 main {
-    width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+h1#trainerTitle {
+  font-family: 'platefont';
+  font-size: 2rem;
+  color: #ff0000;
+  margin: 20px 0;
+}
+
+h1#trainerTitle span{
+  color: white;
+}
+
+h2 {
+  width: 80%;
+}
+
+div.trainerContainer {
+  background-color: beige;
+  width: 80%;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+input#guess {
+  width: 90%;
+  margin-top: 10px;
+  height: 50px;
+  font-size: 1.5rem;
+}
+
+button#checkGuess {
+  display: inline;
+  height: 35px;
+  width: 100px;
+  margin: 10px 0;
+  border: 1px solid grey;
+  border-radius: 5px;
+  font-family: 'platefont';
 }
 
 /*Cambiar y hacer responsive*/
 canvas#license-plate-canvas {
-    width: 600;
-    height: 100;
+  display: none;
+
+  width: 600;
+  height: 100;
 }
 
-/*Cambiar al slider*/
+/*Cambiar, está así provisionalmente para que no afecte a la estructura*/
 input#colorSwitch {
-    position: absolute;
+  position: absolute;
 }
 
 #license-plate-container {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 #license-plate-canvas {
-    display: block;
-    margin: 0 auto;
+  display: block;
+  margin: 0 auto;
 }
 
-body {
-  background-color: #181818;
-  color: white;
-  transition: background-color 0.5s;
-}
-
-#points{
+#points {
   text-align: center;
   margin-top: 50px;
-  font: 'platefont';
+  font: "platefont";
   font-size: 40px;
   font-weight: bold;
 }
 
-#percentage{
+#percentage {
   text-align: center;
   margin-top: 20px;
   font: "platefont";
   font-size: 20px;
   font-weight: bold;
+}
+
+div.bestScores {
+  width: 90%;
+  height: 300px;
+  overflow-y: scroll;
+  border-radius: 3px;
+  background-color: gray;
+  color: #181818;
+  font-family: 'platefont';
+  margin: 25px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div.bestScoresContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  overflow-y: scroll;
+}
+
+div.score {
+  width: 80%;
+  height: 50px;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 7px 7px 5px -3px rgba(0,0,0,0.75);
+  font-size: 30px;
+  border: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  h1#trainerTitle {
+    font-size: 2rem;
+  }
+
+  div.trainerContainer {
+    background-color: beige;
+    width: 100%;
+    margin-top: 20px;
+  }
 }

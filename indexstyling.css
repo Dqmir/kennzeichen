@@ -227,9 +227,8 @@ a {
     margin-left: 10px;
 
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: left;
   }
 
   header div.titleMobile h1{

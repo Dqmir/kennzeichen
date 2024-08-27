@@ -736,6 +736,8 @@ window.addEventListener('load', function() {
 
     drawLicensePlate(currentPlate.code, currentPlate.land);
 
+    this.document.getElementById('trainerTitle').innerHTML = `<span>`+area+`</span><br/> -Trainer-`;
+
 });
 
 //User guess
@@ -749,6 +751,9 @@ document.addEventListener('click', function(event){
         //Generar nueva matrícula (se pone encima de la anterior, o se elimina la anterior?)
         currentPlate = getRandomLicensePlate(area);
         drawLicensePlate(currentPlate.code, currentPlate.land);
+
+        document.getElementById('checkGuess').style.display = 'inline';
+        document.getElementById('guess').style.backgroundColor = 'white';
 
         event.target.remove();
         tryCount=0;
@@ -780,14 +785,18 @@ function checkGuess() {
         points += 1;
         total += 1;
 
+        document.getElementById('guess').style.backgroundColor = 'green';
         if(currentPlate.kreis.includes('Stadt')) resultDiv.innerText = `Richtig! ${currentPlate.code} gehört zu ${currentPlate.city} in der ${currentPlate.kreis} (${currentPlate.land}).`;
         else resultDiv.innerText = `Richtig! ${currentPlate.code} gehört zu ${currentPlate.city} im ${currentPlate.kreis} (${currentPlate.land}).`;
     }
     else {
         total +=1;
+        document.getElementById('guess').style.backgroundColor = 'red';
         if(currentPlate.kreis.includes('Stadt')) resultDiv.innerText = `Falsch. ${currentPlate.code} gehört zu ${currentPlate.city} in der ${currentPlate.kreis} (${currentPlate.land}).`;
         else resultDiv.innerText = `Falsch. ${currentPlate.code} gehört zu ${currentPlate.city} im ${currentPlate.kreis} (${currentPlate.land}).`;
     };
+
+    document.getElementById('checkGuess').style.display = 'none';
 
     showFlag();
     showButton();
