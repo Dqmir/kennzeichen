@@ -727,19 +727,33 @@ window.addEventListener('load', function() {
     points = 0;
     total = 0;
 
-    //Get a random license plate and print it
-    currentPlate = getRandomLicensePlate(area);
-
     if(area != 'Deutschland') {
         updatePage(currentPlate.land);
     }
 
-    drawLicensePlate(currentPlate.code, currentPlate.land);
-    showPoints();
-    showPercentage();
-
     this.document.getElementById('trainerTitle').innerHTML = `<span>`+area+`</span><br/> -Trainer-`;
 
+    this.document.getElementById('license-plate-container').style.display = 'none';
+    this.document.getElementById('content').style.display = 'none';
+    this.document.querySelector('.trainerContainer').style.display = 'none';
+    this.document.querySelector('.startMenu').style.display = 'flex';
+
+    this.document.addEventListener("click", function(event){
+        if(event.target.id==='mode1'){
+
+            //Get a random license plate and print it
+            currentPlate = getRandomLicensePlate(area);
+
+            drawLicensePlate(currentPlate.code, currentPlate.land);
+            showPoints();
+            showPercentage();
+            document.getElementById('license-plate-container').style.display = 'block';
+            document.querySelector('.trainerContainer').style.display= 'flex';
+            document.querySelector('.startMenu').style.display = 'none';
+        } else if (event.target.id==='mode2'){
+            alert('mode2');
+        }
+    });
 });
 
 //User guess
@@ -944,8 +958,6 @@ function showButton()
   const newButton = document.createElement('button');
 
   newButton.textContent = 'Nächstes';
-  newButton.style.marginTop = '10px';
-  newButton.style.padding = '10px';
   newButton.className = 'nextQuestion';
 
   const buttonContainer = document.getElementById('button-container');

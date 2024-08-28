@@ -101,8 +101,8 @@ div.option {
 main {
   width: 100%;
   display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
@@ -127,7 +127,7 @@ div.trainerContainer {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  align-content: start;
+  align-content: space-around;
   justify-content: center;
 }
 
@@ -141,17 +141,21 @@ input#guess {
   margin-top: 5px;
   height: 35px;
   font-size: 1.5rem;
+  border-radius: 3px;
+  border: 1px solid grey;
+  border-radius: 5px;
 }
 
 button#checkGuess, button.nextQuestion {
   display: inline;
   height: 35px;
-  width: fit-content;
+  width: 80px;
   padding: 0 5px;
   margin: 10px 0;
   border: 1px solid grey;
   border-radius: 5px;
   font-family: "platefont";
+  background-color: white;
 }
 
 #result {
@@ -201,7 +205,6 @@ div.resultDiv {
 div.bestScores {
   width: 90%;
   height: 300px;
-  overflow-y: scroll;
   border-radius: 3px;
   background-color: gray;
   color: #181818;
@@ -232,8 +235,10 @@ div.score {
   font-size: 30px;
   border: 1px solid grey;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
 }
 
 /*Cambiar y hacer responsive*/
@@ -257,6 +262,29 @@ input#colorSwitch {
 #license-plate-canvas {
   display: block;
   margin: 0 auto;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  h1#trainerTitle {
+    width: 100%;
+  }
+
+  div#license-plate-container {
+    width: 100%;
+  }
+  
+  main {
+    justify-content: space-around;
+  }
+
+  div.trainerContainer {
+    width: 55%;
+  }
+
+  div.bestScores {
+    width: 30%;
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -283,10 +311,38 @@ input#colorSwitch {
     margin-bottom: 0;
     justify-content: left;
   }
+
+  h2 {
+    font-size: 17px;
+  }
+
 }
 
-@media (max-width: 500px) {
+@media (min-width: 500px) {
+  input#guess {
+    width: 60%;
+    margin-right: 10px;
+    margin-top: 0;
+  }
+
+  button#checkGuess, button.nextQuestion {
+    margin-top: 0;
+  }
+
   h2 {
-    font-size: 18px;
+    font-size: 20px;
+  }
+
+  div.resultDiv {
+    justify-content: center;
+  }
+
+  div#image-container{
+    width: 20%;
+    margin-left: 10px;
+  }
+
+  div#image-container img{
+    width: 100%;
   }
 }
