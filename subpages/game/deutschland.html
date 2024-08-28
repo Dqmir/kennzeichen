@@ -17,7 +17,7 @@
       <a href="../../index.html">
         <div class="titleMobileDiv">
           <div class="brdLogoMobile">
-            <img src="../../images/brdverticallogo.png">
+            <img src="../../images/brdverticallogo.png" />
           </div>
           <div class="titleMobile">
             <h1 style="color: white">Deutschlands</h1>
@@ -38,8 +38,8 @@
     </div>
 
     <div class="startMenu">
-      <div class="option"> OPTION 1</div>
-      <div class="option"> OPTION 2</div>
+      <div class="option">OPTION 1</div>
+      <div class="option">OPTION 2</div>
     </div>
 
     <main>
@@ -47,15 +47,19 @@
       <div id="license-plate-container">
         <canvas id="license-plate-canvas" width="600" height="100"></canvas>
       </div>
-      <h2>Zu welchem Ort gehört dieser Code?</h2>
 
       <div class="trainerContainer">
+        <h2>Zu welchem Ort gehört dieser Code?</h2>
+
         <input type="text" id="guess" placeholder="" autofocus />
         <button id="checkGuess">Einreichen</button>
-  
-        <div id="result"></div>
-        <div id="image-container"></div>
         <div id="button-container"></div>
+
+        <div class="resultDiv">
+          <div id="result"></div>
+          <div id="image-container"></div>
+        </div>
+
         <div id="points"></div>
         <div id="percentage"></div>
       </div>

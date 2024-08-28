@@ -31,7 +31,7 @@ header {
   flex-wrap: wrap;
   justify-content: left;
   border-bottom: 1px solid white;
-  font-family: 'platefont';
+  font-family: "platefont";
 }
 
 header div.titleMobileDiv {
@@ -46,7 +46,7 @@ header div.titleMobileDiv {
   align-items: center;
 }
 
-header div.titleMobile{
+header div.titleMobile {
   width: 195px;
   margin-left: 10px;
 
@@ -55,17 +55,17 @@ header div.titleMobile{
   justify-content: left;
 }
 
-header div.titleMobile h1{
+header div.titleMobile h1 {
   font-size: 20px;
 }
 
-header div.brdLogoMobile{
+header div.brdLogoMobile {
   width: 55px;
   height: 60px;
   margin-bottom: 10px;
 }
 
-header div.brdLogoMobile img{
+header div.brdLogoMobile img {
   width: 100%;
 }
 
@@ -78,7 +78,7 @@ div.startMenu {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  font-family: 'platefont';
+  font-family: "platefont";
   display: none;
 }
 
@@ -88,7 +88,7 @@ div.option {
   margin: 10px 0;
   border-radius: 5px;
   background-color: white;
-  box-shadow: 7px 7px 5px -3px rgba(0,0,0,0.75);
+  box-shadow: 7px 7px 5px -3px rgba(0, 0, 0, 0.75);
   font-size: 30px;
   border: 1px solid grey;
   color: #181818;
@@ -108,42 +108,132 @@ main {
 }
 
 h1#trainerTitle {
-  font-family: 'platefont';
+  font-family: "platefont";
   font-size: 2rem;
   color: #ff0000;
   margin: 20px 0;
 }
 
-h1#trainerTitle span{
+h1#trainerTitle span {
   color: white;
 }
 
-h2 {
-  width: 80%;
+/*Trainer div*/
+div.trainerContainer {
+  width: 100%;
+  height: 300px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: start;
+  justify-content: center;
 }
 
-div.trainerContainer {
-  background-color: beige;
-  width: 80%;
-  border-radius: 5px;
-  margin-top: 20px;
+h2 {
+  width: 100%;
+  padding: 10px 10px;
 }
 
 input#guess {
   width: 90%;
-  margin-top: 10px;
-  height: 50px;
+  margin-top: 5px;
+  height: 35px;
   font-size: 1.5rem;
 }
 
-button#checkGuess {
+button#checkGuess, button.nextQuestion {
   display: inline;
   height: 35px;
-  width: 100px;
+  width: fit-content;
+  padding: 0 5px;
   margin: 10px 0;
   border: 1px solid grey;
   border-radius: 5px;
-  font-family: 'platefont';
+  font-family: "platefont";
+}
+
+#result {
+  width: 60%;
+  font-size: 15px;
+  text-align: left;
+}
+
+#image-container {
+  width: 30%;
+}
+
+#image-container img{
+  width: 80px;
+}
+
+/*Resultado*/
+div.resultDiv {
+  margin-top: 10px;
+  width: 90%;
+  height: 70px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: start;
+  justify-content: space-between;
+}
+
+#points {
+  width: 50%;
+  font: "platefont";
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 20px;
+  align-self: flex-end;
+}
+
+#percentage {
+  width: 50%;
+  font: "platefont";
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 20px;
+  align-self: flex-end;
+}
+
+div.bestScores {
+  width: 90%;
+  height: 300px;
+  overflow-y: scroll;
+  border-radius: 3px;
+  background-color: gray;
+  color: #181818;
+  font-family: "platefont";
+  margin: 25px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div.bestScoresContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  overflow-y: scroll;
+}
+
+div.score {
+  width: 80%;
+  height: 50px;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 7px 7px 5px -3px rgba(0, 0, 0, 0.75);
+  font-size: 30px;
+  border: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /*Cambiar y hacer responsive*/
@@ -169,68 +259,34 @@ input#colorSwitch {
   margin: 0 auto;
 }
 
-#points {
-  text-align: center;
-  margin-top: 50px;
-  font: "platefont";
-  font-size: 40px;
-  font-weight: bold;
-}
-
-#percentage {
-  text-align: center;
-  margin-top: 20px;
-  font: "platefont";
-  font-size: 20px;
-  font-weight: bold;
-}
-
-div.bestScores {
-  width: 90%;
-  height: 300px;
-  overflow-y: scroll;
-  border-radius: 3px;
-  background-color: gray;
-  color: #181818;
-  font-family: 'platefont';
-  margin: 25px 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-div.bestScoresContainer {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  overflow-y: scroll;
-}
-
-div.score {
-  width: 80%;
-  height: 50px;
-  margin-top: 20px;
-  border-radius: 5px;
-  background-color: white;
-  box-shadow: 7px 7px 5px -3px rgba(0,0,0,0.75);
-  font-size: 30px;
-  border: 1px solid grey;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 @media (max-width: 768px) {
   h1#trainerTitle {
-    font-size: 2rem;
+    font-size: 1.7rem;
+    max-width: 90%;
   }
 
-  div.trainerContainer {
-    background-color: beige;
-    width: 100%;
-    margin-top: 20px;
+  header div.brdLogoMobile {
+    width: 45px;
+  }
+
+  header div.titleMobile {
+    margin-left: 8px;
+    margin-bottom: 12px;
+  }
+
+  header div.titleMobile h1 {
+    font-size: 18px;
+  }
+
+  header div.titleMobileDiv {
+    margin-left: 10px;
+    margin-bottom: 0;
+    justify-content: left;
+  }
+}
+
+@media (max-width: 500px) {
+  h2 {
+    font-size: 18px;
   }
 }

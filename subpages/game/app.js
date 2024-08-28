@@ -735,6 +735,8 @@ window.addEventListener('load', function() {
     }
 
     drawLicensePlate(currentPlate.code, currentPlate.land);
+    showPoints();
+    showPercentage();
 
     this.document.getElementById('trainerTitle').innerHTML = `<span>`+area+`</span><br/> -Trainer-`;
 
@@ -904,7 +906,8 @@ function showPoints()
 function showPercentage() {
     const percentageDiv = document.getElementById('percentage');
 
-    const percentage = (points / total) * 100;
+    let percentage = (points / total) * 100;
+    if (isNaN(percentage)) percentage = 0;
     const percentageString = percentage.toFixed(2) + '%';
 
     const color = getColorFromPercentage(percentage);
@@ -932,10 +935,6 @@ function showFlag()
 
   newImage.src = `../../images/flags/${currentPlate.land}.png`;
 
-  newImage.style.marginTop = '10px';
-  newImage.style.width = '83px';
-  newImage.style.height = '50px';
-
   imageContainer.appendChild(newImage);
 }
 
@@ -944,7 +943,7 @@ function showButton()
 {
   const newButton = document.createElement('button');
 
-  newButton.textContent = 'Nächstes Kfz-Kennzeichen';
+  newButton.textContent = 'Nächstes';
   newButton.style.marginTop = '10px';
   newButton.style.padding = '10px';
   newButton.className = 'nextQuestion';
