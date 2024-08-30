@@ -146,7 +146,8 @@ input#guess {
   border-radius: 5px;
 }
 
-button#checkGuess, button.nextQuestion {
+button#checkGuess,
+button.nextQuestion {
   display: inline;
   height: 35px;
   width: 80px;
@@ -168,7 +169,7 @@ button#checkGuess, button.nextQuestion {
   width: 30%;
 }
 
-#image-container img{
+#image-container img {
   width: 80px;
 }
 
@@ -264,33 +265,56 @@ input#colorSwitch {
   margin: 0 auto;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
-  h1#trainerTitle {
+/*Footer*/
+footer div.menu {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+footer div.menu a {
+  color: white;
+  font-family: "platefont";
+}
+
+/*Media queries*/
+
+@media (min-width: 500px) {
+  input#guess {
+    width: 60%;
+    margin-right: 10px;
+    margin-top: 0;
+  }
+
+  button#checkGuess,
+  button.nextQuestion {
+    margin-top: 0;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  div.resultDiv {
+    justify-content: center;
+  }
+
+  div#image-container {
+    width: 20%;
+    margin-left: 10px;
+  }
+
+  div#image-container img {
     width: 100%;
   }
-
-  div#license-plate-container {
-    width: 100%;
-  }
-  
-  main {
-    justify-content: space-around;
-  }
-
-  div.trainerContainer {
-    width: 55%;
-  }
-
-  div.bestScores {
-    width: 30%;
-  }
-
 }
 
 @media (max-width: 768px) {
   h1#trainerTitle {
     font-size: 1.7rem;
-    max-width: 90%;
   }
 
   header div.brdLogoMobile {
@@ -315,34 +339,42 @@ input#colorSwitch {
   h2 {
     font-size: 17px;
   }
-
 }
 
-@media (min-width: 500px) {
-  input#guess {
-    width: 60%;
-    margin-right: 10px;
-    margin-top: 0;
-  }
-
-  button#checkGuess, button.nextQuestion {
-    margin-top: 0;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-
-  div.resultDiv {
-    justify-content: center;
-  }
-
-  div#image-container{
-    width: 20%;
-    margin-left: 10px;
-  }
-
-  div#image-container img{
+@media (min-width: 768px) {
+  h1#trainerTitle {
     width: 100%;
   }
+
+  div#license-plate-container {
+    width: 100%;
+  }
+
+  main {
+    justify-content: space-around;
+  }
+
+  div.trainerContainer {
+    width: 55%;
+  }
+
+  div.bestScores {
+    width: 30%;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1#trainerTitle {
+    width: 100%;
+    font-size: 50px;
+  }
+  header {
+    display: none;
+  }
+
+  /*
+  Ponerle margin-bottom al div.bestScores 
+  y margin-right al div#license-plates-container
+  al arreglar el license plate div
+  */
 }

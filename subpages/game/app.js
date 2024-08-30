@@ -731,7 +731,14 @@ window.addEventListener('load', function() {
         updatePage(currentPlate.land);
     }
 
-    this.document.getElementById('trainerTitle').innerHTML = `<span>`+area+`</span><br/> -Trainer-`;
+    console.log(this.window.innerWidth);
+
+    if(this.window.innerWidth<1024){
+        this.document.getElementById('trainerTitle').innerHTML = `<span>`+area+`</span><br/> -Trainer-`;
+    } else {
+        this.document.getElementById('trainerTitle').innerHTML = `<span>`+area+` &nbsp;&nbsp;&nbsp;&nbsp; Trainer</span>`;
+    }
+
 
     this.document.getElementById('license-plate-container').style.display = 'none';
     this.document.getElementById('content').style.display = 'none';
