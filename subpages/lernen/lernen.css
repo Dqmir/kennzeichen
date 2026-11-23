@@ -1,54 +1,300 @@
+/* Initialization of the fonts to be used in the page, platefont for titles and searchbarfont
+   for other text elements */
+
+
+@font-face {
+    font-family: 'searchbarfont';
+    src: url('../../fonts/searchbarfont.otf');
+}
+
+@font-face {
+    font-family: 'platefont';
+    src: url('../../fonts/EuroPlate.ttf');
+}
+
+/* Elimination of the native browser searchbar elements and decorations */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+
+/* Elimination of the native browser scrollbar */
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* General settings for the page */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body{
   background-color: #181818;
-  color: white;
-
 }
 
-#searchbox{
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+/* General settings for the search elements */
+
+.search{
+  --padding: 10px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  padding: var(--padding);
+  border-radius: 30px;
+  background-color: #808080;
+  transition: box-shadow 0.25s;
 }
 
-#codesearch-input{
-  position: relative;
-  left: -150%;
-  width:300px;
-  height:20px;
+.search:focus-within{
+  box-shadow: 0 0 5px #ffffff;
 }
 
-#citysearch-input{
-  position: absolute;
-  left: 150%;
-  top: 0%;
-  width:300px;
-  height:20px;
+.search-input{
+  font-size: 20px;
+  font-family: 'searchbarfont';
+  color: #000000;
+  margin-left: var(--padding);
+  outline: none;
+  border: none;
+  background: transparent;
+  flex: 1;
 }
 
-#regionselector-input{
-  position: absolute;
-  top:-200%;
-  width:300px;
-  height:20px;
+.search-input option{
+  background-color: #808080;
 }
+
+.search-input option:hover
+.search-input option:checked{
+  background-color: #404040;
+}
+
+.search-input::placeholder,
+.search-icon{
+  color: black;
+}
+
+#city{
+  margin-top: 20px;
+}
+
+#bundesland{
+  margin-top: 20px;
+}
+
+/* General settings for the license plate showcase div */
 
 #table{
-  position: absolute;
-  top: 65%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height:400px;
   overflow: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  position: relative;
 }
 
-.btn{
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
+/* General settings for the menu (navbar and footer) */
+
+div.menu{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  /*background-color: #0a0a0a;*/
+}
+
+nav{
+  width: 100%;
+  background-image: linear-gradient(black, rgba(24, 24, 24, 0.8));
+}
+
+footer {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  background-image: linear-gradient(0deg, black, rgba(24, 24, 24, 0.8));
+}
+
+a {
+  color: white;
+  font-family: 'platefont';
+}
+
+/* General settings for the desktop title */
+
+.titleDesktop{
+  font-family: 'platefont';
+}
+
+@media (min-width: 1537px){
+  div.titleMobileDiv{
+    display: none;
+  }
+
+ div.menu{
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    color: white;
+  }
+
+  nav{
+    height: 40px;
+    top: 5px;
+  }
+
+  div.main {
+    max-width: 800px;
+    height: 800px;
+    top: 40px;
+    left: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    position: absolute;
+    margin-left: 260px;
+  }
+
+  .titleDesktopDiv{
+    margin-top: 110px;
+  }
+
+  .titleDesktop{
+    position: relative;
+    font-size: 24px;
+    z-index: 1;
+    margin-top: 40px;
+  }
+
+  .brdLogoContainerDesktop img{
+    width: 250px;
+    height: 303px;
+    position: relative;
+    z-index: 0;
+    transform: rotate(45deg);
+    left: 75px;
+    top: -220px;
+  }
+
+  .searchbox{
+    position: relative;
+    margin-top: -200px;
+    width: 400px;
+  }
+
+  #table{
+    width: 1000px;
+    height: 690px;
+    top: 70px;
+    left: 110px;
+  }
+
+  footer{
+    position: fixed;
+    bottom: 0px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1536px){
+  .titleMobileDiv{
+    display: none;
+  }
+
+  div.menu{
+     height: 40px;
+     width: 100%;
+     position: absolute;
+     z-index: 1;
+     color: white;
+   }
+
+   nav{
+     height: 40px;
+     top: 5px;
+   }
+
+   footer{
+     position: fixed;
+     bottom: 0px;
+   }
+
+   div.main {
+     max-width: 500px;
+     height: 650px;
+     top: 40px;
+     left: 50%;
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: center;
+     align-items: stretch;
+     position: absolute;
+     margin-left: 150px;
+   }
+
+   #table{
+     width: 800px;
+     height: 540px;
+     top: 50px;
+     left: 110px;
+   }
+
+   .titleDesktopDiv{
+     margin-top: 100px;
+   }
+
+   .titleDesktop{
+     position: relative;
+     font-size: 20px;
+     z-index: 1;
+     margin-top: 0px;
+   }
+
+   .brdLogoContainerDesktop img{
+     width: 200px;
+     height: 243px;
+     position: relative;
+     z-index: 0;
+     transform: rotate(45deg);
+     left: 75px;
+     top: -180px;
+   }
+
+   .searchbox{
+     position: relative;
+     margin-top: -200px;
+     width: 400px;
+   }
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+  .titleMobileDiv{
+    display: none;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 768px){
+  .titleDesktopDiv{
+    display: none;
+  }
+}
+
+@media (max-width: 500px){
+  .titleDesktopDiv{
+    display: none;
+  }
 }

@@ -1,56 +1,137 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
   <head>
+
     <meta charset="utf-8">
-    <title>Kfz-Kennzeichen Datenbank</title>
+
+    <title>KFZ Kennzeichen Datenbank</title>
+
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="lernen.css">
+
+    <!-- Google Fonts Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+
+    <!-- Font Awesome Symbols -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
   </head>
+
   <body>
-    <div id="searchbox">
-      <div id="codesearch">
-        <input type="search" id="codesearch-input" placeholder="Suche nach Buchstabenkombination" autofocus>
+    <header>
+
+      <!-- Mobile Title div-->
+      <div class="titleMobileDiv">
+
+        <!-- BRD (Bundesrepublik Deutschland) Eagle img div -->
+        <div class="brdLogoMobile">
+          <img src="../../images/brdlogo.png">
+        </div>
+
+        <!-- Text Title div -->
+        <div class="titleMobile">
+          <h1 style="color: #666666">Deutschlands</h1>
+          <h1 style="color: #ff0000">KFZ-Kennzeichen</h1>
+          <h1 style="color: #ffcc00">Trainer</h1>
+        </div>
+
       </div>
-      <div id="citysearch">
-        <input type="search" id="citysearch-input" placeholder="Suche nach Ort" autofocus>
+
+    </header>
+
+    <nav>
+
+      <div class="menu">
+        <a href="../../index.html">Home</a>
+        <a href="lernen.html">Lernen</a>
+        <a href="https://www.patreon.com/DamirFlores">Patreon</a>
       </div>
-      <div id="regionselector">
-        <select id="regionselector-input" placeholder="Bundesland Auswahl" autofocus>
-          <option value="Alle Bundesländer">Alle Bundesländer</option>
-          <option value="Baden-Württemberg">Baden-Württemberg</option>
-          <option value="Bayern">Bayern</option>
-          <option value="Berlin">Berlin</option>
-          <option value="Brandenburg">Brandenburg</option>
-          <option value="Bremen">Bremen</option>
-          <option value="Hamburg">Hamburg</option>
-          <option value="Hessen">Hessen</option>
-          <option value="Mecklenburg-Vorpommern">Mecklenburg-Vorpommern</option>
-          <option value="Niedersachsen">Niedersachsen</option>
-          <option value="Nordrhein-Westfalen">Nordrhein-Westfalen</option>
-          <option value="Rheinland-Pfalz">Rheinland-Pfalz</option>
-          <option value="Saarland">Saarland</option>
-          <option value="Sachsen">Sachsen</option>
-          <option value="Sachsen-Anhalt">Sachsen-Anhalt</option>
-          <option value="Schleswig-Holstein">Schleswig-Holstein</option>
-          <option value="Thüringen">Thüringen</option>
-        </select>
-      </div>
-    </div>
+
+    </nav>
+
+    <!-- License Plate Showcase div -->
     <div id="table">
       <div id="scrollable-div">
-            <canvas id="license-plate-canvas" width="1200px"></canvas>
+            <canvas id="license-plate-canvas" width="1000px"></canvas>
       </div>
     </div>
-    <div id="homebutton">
 
-      <div class="container">
-        <a href="../../index.html">
-          <img src="../../images/icons/whitehouse.png" id="house" width=40px height=40px>
-          <button class="btn"></button>
-        </a>
+    <!-- Main div -->
+    <div class="main">
+
+      <!-- Desktop Title div -->
+      <div class="titleDesktopDiv">
+
+        <!-- Desktop Title Text div -->
+        <div class="titleDesktop">
+          <h1 style="color: #666666">Deutschlands</h1>
+          <h1 style="color: #ff0000">&emsp;&nbsp;KFZ-Kennzeichen</h1>
+          <h1 style="color: #ffcc00">&emsp;&emsp;&nbsp;Datenbank</h1>
+        </div>
+
+        <!-- BRD Eagle img div -->
+        <div class="brdLogoContainerDesktop">
+          <img src="../../images/brdlogo.png">
+        </div>
+
+      </div>
+
+      <!-- Filter Buttons div -->
+      <div class="searchbox">
+
+        <!-- Filter by Code -->
+        <div class="search" id="code">
+          <span class="search-icon material-symbols-outlined">abc</span>
+          <input type="search" id="code-input" class="search-input" placeholder="Suche nach Buchstabenkombination" autofocus>
+        </div>
+
+        <!-- Filter by City -->
+        <div class="search" id="city">
+          <span class="search-icon material-symbols-outlined">location_city</span>
+          <input type="search" id="city-input" class="search-input" placeholder="Suche nach Ort" autofocus>
+        </div>
+
+        <!-- Filter by Bundesland -->
+        <div class="search" id="bundesland">
+          <span class="search-icon fas fa-map-location" style="margin-left:3px;"></span>
+          <select id="bundesland-input" class="search-input" placeholder="Bundesland Auswahl" autofocus>
+            <option value="Alle Bundesländer">Suche nach Bundesland</option>
+            <option value="Baden-Württemberg">Baden-Württemberg</option>
+            <option value="Bayern">Bayern</option>
+            <option value="Berlin">Berlin</option>
+            <option value="Brandenburg">Brandenburg</option>
+            <option value="Bremen">Bremen</option>
+            <option value="Hamburg">Hamburg</option>
+            <option value="Hessen">Hessen</option>
+            <option value="Mecklenburg-Vorpommern">Mecklenburg-Vorpommern</option>
+            <option value="Niedersachsen">Niedersachsen</option>
+            <option value="Nordrhein-Westfalen">Nordrhein-Westfalen</option>
+            <option value="Rheinland-Pfalz">Rheinland-Pfalz</option>
+            <option value="Saarland">Saarland</option>
+            <option value="Sachsen">Sachsen</option>
+            <option value="Sachsen-Anhalt">Sachsen-Anhalt</option>
+            <option value="Schleswig-Holstein">Schleswig-Holstein</option>
+            <option value="Thüringen">Thüringen</option>
+          </select>
+
+        </div>
+
       </div>
 
     </div>
+
+    <footer>
+
+      <div class="menu">
+        <a href="">Copyright</a>
+        <a href="">About us</a>
+      </div>
+
+    </footer>
 
     <script src="lernen.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   </body>
 </html>
