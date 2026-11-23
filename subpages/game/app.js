@@ -41,6 +41,7 @@ const licensePlates = [
     { code: 'BCH', city: 'Buchen', kreis: 'Neckar-Odenwald-Kreis', land: 'Baden-Württemberg'},
     { code: 'BE', city: 'Beckum', kreis: 'Kreis Warendorf', land: 'Nordrhein-Westfalen'},
     { code: 'BED', city: 'Brand-Erbisdorf', kreis: 'Landkreis Mittelsachsen', land: 'Sachsen'},
+    { code: 'BEL', city: 'Belzig', kreis: 'Landkreis Potsdam-Mittelmark', land: 'Brandenburg'},
     { code: 'BER', city: 'Bernau', kreis: 'Landkreis Barnim', land: 'Brandenburg'},
     { code: 'BF', city: 'Burgsteinfurt', kreis: 'Kreis Steinfurt', land: 'Nordrhein-Westfalen'},
     { code: 'BGD', city: 'Berchtesgaden', kreis: 'Landkreis Berchtesgadener Land', land: 'Bayern'},
@@ -66,6 +67,7 @@ const licensePlates = [
     { code: 'BOH', city: 'Bocholt', kreis: 'Kreis Borken', land: 'Nordrhein-Westfalen'},
     { code: 'BOR', city: 'Borken', kreis: 'Kreis Borken', land: 'Nordrhein-Westfalen'},
     { code: 'BOT', city: 'Bottrop', kreis: 'Stadt Bottrop', land: 'Nordrhein-Westfalen'},
+    { code: 'BR', city: 'Bruchsal', kreis: 'Landkreis Karlsruhe', land: 'Baden-Württemberg'},
     { code: 'BRA', city: 'Brake', kreis: 'Landkreis Wesermarsch', land: 'Niedersachsen'},
     { code: 'BRB', city: 'Brandenburg', kreis: 'Stadt Brandenburg an der Havel', land: 'Brandenburg'},
     { code: 'BRG', city: 'Burg', kreis: 'Landkreis Jerichower Land', land: 'Sachsen-Anhalt'},
@@ -121,9 +123,11 @@ const licensePlates = [
     { code: 'DN', city: 'Düren', kreis: 'Kreis Düren', land: 'Nordrhein-Westfalen'},
     { code: 'DO', city: 'Dortmund', kreis: 'Stadt Dortmund', land: 'Nordrhein-Westfalen'},
     { code: 'DON', city: 'Donauwörth', kreis: 'Landkreis Donau-Ries', land: 'Bayern'},
+    { code: 'DS', city: 'Donaueschingen', kreis: 'Schwarzwald-Baar-Kreis', land: 'Baden-Württemberg'},
     { code: 'DU', city: 'Duisburg', kreis: 'Stadt Duisburg', land: 'Nordrhein-Westfalen'},
     { code: 'DUD', city: 'Duderstadt', kreis: 'Landkreis Göttingen', land: 'Niedersachsen'},
     { code: 'DÜW', city: 'Dürkheim an der Weinstraße', kreis: 'Landkreis Bad Dürkheim', land: 'Rheinland-Pfalz'},
+    { code: 'DT', city: 'Detmold', kreis: 'Kreis Lippe', land: 'Nordrhein-Westfalen'},
     { code: 'DW', city: 'Dippoldiswalde', kreis: 'Landkreis Sächsische Schweiz-Osterzgebirge', land: 'Sachsen'},
     { code: 'DZ', city: 'Delitzsch', kreis: 'Landkreis Nordsachsen', land: 'Sachsen'},
     { code: 'E', city: 'Essen', kreis: 'Stadt Essen', land: 'Nordrhein-Westfalen'},
@@ -290,6 +294,7 @@ const licensePlates = [
     { code: 'IN', city: 'Ingolstadt', kreis: 'Stadt Ingolstadt', land: 'Bayern'},
     { code: 'IZ', city: 'Itzehoe', kreis: 'Kreis Steinburg', land: 'Schleswig-Holstein'},
     { code: 'J', city: 'Jena', kreis: 'Stadt Jena', land: 'Thüringen'},
+    { code: 'JB', city: 'Jüterbog', kreis: 'Landkreis Teltow-Fläming', land: 'Brandenburg'},
     { code: 'JE', city: 'Jessen', kreis: 'Landkreis Wittenberg', land: 'Sachsen-Anhalt'},
     { code: 'JL', city: 'Jerichower Land', kreis: 'Landkreis Jerichower Land', land: 'Sachsen-Anhalt'},
     { code: 'JÜL', city: 'Jülich', kreis: 'Kreis Düren', land: 'Nordrhein-Westfalen'},
@@ -337,6 +342,7 @@ const licensePlates = [
     { code: 'LD', city: 'Landau', kreis: 'Stadt Landau in der Pfalz', land: 'Rheinland-Pfalz'},
     { code: 'LDK', city: 'Lahn-Dill-Kreis', kreis: 'Lahn-Dill-Kreis', land: 'Hessen'},
     { code: 'LDS', city: 'Landkreis Dahme-Spreewald', kreis: 'Landkreis Dahme-Spreewald', land: 'Brandenburg'},
+    { code: 'LE', city: 'Lemgo', kreis: 'Kreis Lippe', land: 'Nordrhein-Westfalen'},
     { code: 'LEO', city: 'Leonberg', kreis: 'Landkreis Böblingen', land: 'Baden-Württemberg'},
     { code: 'LER', city: 'Leer', kreis: 'Landkreis Leer', land: 'Niedersachsen'},
     { code: 'LEV', city: 'Leverkusen', kreis: 'Stadt Leverkusen', land: 'Nordrhein-Westfalen'},
@@ -347,6 +353,7 @@ const licensePlates = [
     { code: 'LIB', city: 'Liebenwerda', kreis: 'Landkreis Elbe-Elster', land: 'Brandenburg'},
     { code: 'LIF', city: 'Lichtenfels', kreis: 'Landkreis Lichtenfels', land: 'Bayern'},
     { code: 'LIP', city: 'Lippe', kreis: 'Kreis Lippe', land: 'Nordrhein-Westfalen'},
+    { code: 'LK', city: 'Lübbecke', kreis: 'Kreis Minden-Lübbecke', land: 'Nordrhein-Westfalen'},
     { code: 'LL', city: 'Landsberg Am Lech', kreis: 'Landkreis Landsberg am Lech', land: 'Bayern'},
     { code: 'LM', city: 'Limburg', kreis: 'Landkreis Limburg-Weilburg', land: 'Hessen'},
     { code: 'LN', city: 'Lübben', kreis: 'Landkreis Dahme-Spreewald', land: 'Brandenburg'},
@@ -359,6 +366,7 @@ const licensePlates = [
     { code: 'LSZ', city: 'Langensalza', kreis: 'Unstrut-Hainich-Kreis', land: 'Thüringen'},
     { code: 'LU', city: 'Ludwigshafen', kreis: 'Stadt Ludwigshafen am Rhein', land: 'Rheinland-Pfalz'},
     { code: 'LÜN', city: 'Lünen', kreis: 'Kreis Unna', land: 'Nordrhein-Westfalen'},
+    { code: 'LUK', city: 'Luckenwalde', kreis: 'Landkreis Teltow-Fläming', land: 'Brandenburg'},
     { code: 'LUP', city: 'Ludwigslust, Parchim', kreis: 'Landkreis Ludwigslust-Parchim', land: 'Mecklenburg-Vorpommern'},
     { code: 'LWL', city: 'Ludwigslust', kreis: 'Landkreis Ludwigslust-Parchim', land: 'Mecklenburg-Vorpommern'},
     { code: 'M', city: 'München', kreis: 'Stadt München, Landkreis München', land: 'Bayern'},
@@ -404,7 +412,8 @@ const licensePlates = [
     { code: 'MST', city: 'Mecklenburg-Strelitz', kreis: 'Landkreis Mecklenburgische Seenplatte', land: 'Mecklenburg-Vorpommern'},
     { code: 'MTK', city: 'Main-Taunus-Kreis', kreis: 'Main-Taunus-Kreis', land: 'Hessen'},
     { code: 'MTL', city: 'Muldental', kreis: 'Landkreis Leipzig', land: 'Sachsen'},
-    { code: 'MUC', city: 'Muenchen', kreis: 'Stadt München', land: 'Bayern'},
+    { code: 'MU', city: 'Münchner Umland', kreis: 'Landkreis München', land: 'Bayern'},
+    { code: 'MUC', city: 'München', kreis: 'Stadt München', land: 'Bayern'},
     { code: 'MÜ', city: 'Mühldorf', kreis: 'Landkreis Mühldorf am Inn', land: 'Bayern'},
     { code: 'MÜB', city: 'Münchberg', kreis: 'Landkreis Bayreuth, Landkreis Hof', land: 'Bayern'},
     { code: 'MÜL', city: 'Müllheim', kreis: 'Landkreis Breisgau-Hochschwarzwald', land: 'Baden-Württemberg'},
@@ -577,6 +586,7 @@ const licensePlates = [
     { code: 'SM', city: 'Schmalkalden', kreis: 'Landkreis Schmalkalden-Meiningen', land: 'Thüringen'},
     { code: 'SMÜ', city: 'Schwabmünchen', kreis: 'Landkreis Augsburg', land: 'Bayern'},
     { code: 'SN', city: 'Schwerin', kreis: 'Stadt Schwerin', land: 'Mecklenburg-Vorpommern'},
+    { code: 'SNH', city: 'Sinsheim', kreis: 'Rhein-Neckar-Kreis', land: 'Baden-Württemberg'},
     { code: 'SO', city: 'Soest', kreis: 'Kreis Soest', land: 'Nordrhein-Westfalen'},
     { code: 'SOB', city: 'Schrobenhausen', kreis: 'Landkreis Neuburg-Schrobenhausen', land: 'Bayern'},
     { code: 'SOG', city: 'Schongau', kreis: 'Landkreis Weilheim-Schongau', land: 'Bayern'},
@@ -701,16 +711,19 @@ const licensePlates = [
     { code: 'ZIG', city: 'Ziegenhain', kreis: 'Schwalm-Eder-Kreis', land: 'Hessen'},
     { code: 'ZP', city: 'Zschopau', kreis: 'Erzgebirgskreis', land: 'Sachsen'},
     { code: 'ZR', city: 'Zeulenroda', kreis: 'Landkreis Greiz', land: 'Thüringen'},
+    { code: 'ZS', city: 'Zossen', kreis: 'Landkreis Teltow-Fläming', land: 'Brandenburg'},
     { code: 'ZW', city: 'Zweibrücken', kreis: 'Stadt Zweibrücken, Landkreis Südwestpfalz', land: 'Rheinland-Pfalz'},
     { code: 'ZZ', city: 'Zeitz', kreis: 'Burgenlandkreis', land: 'Sachsen-Anhalt'},
   ];
 
 let currentPlate = {};
+let availablePlates = [];
 
 //Set points to 0
 let points = 0;
 let total = 0;
 let tryCount = 0;
+let roundFinished = false;
 
 //Other objects
 let resultDiv = document.querySelector('#result');
@@ -721,150 +734,205 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const area = urlParams.get('area');
 
-//Page load
-window.addEventListener('load', function() {
+function getPlatesForArea(selectedArea) {
+    if (selectedArea && selectedArea !== 'Deutschland') {
+        return licensePlates.filter(plate => plate.land === selectedArea);
+    }
+    return [...licensePlates];
+}
 
+function resetGame() {
     points = 0;
     total = 0;
+    tryCount = 0;
+    roundFinished = false;
+    availablePlates = getPlatesForArea(area);
 
-    //Get a random license plate and print it
-    currentPlate = getRandomLicensePlate(area);
+    const pointsDiv = document.getElementById('points');
+    if (pointsDiv) {
+        pointsDiv.innerText = '0 / 0';
+    }
 
-    if(area != 'Deutschland') {
+    const percentageDiv = document.getElementById('percentage');
+    if (percentageDiv) {
+        percentageDiv.innerText = '0.00%';
+        percentageDiv.style.color = '';
+    }
+
+    const nextButton = document.querySelector('.nextQuestion');
+    if (nextButton) {
+        nextButton.remove();
+    }
+
+    startNextQuestion();
+}
+
+function startNextQuestion() {
+    currentPlate = getRandomLicensePlate();
+    if (!currentPlate) {
+        return;
+    }
+
+    if (area && area !== 'Deutschland') {
         updatePage(currentPlate.land);
     }
 
     drawLicensePlate(currentPlate.code, currentPlate.land);
+}
 
+function advanceRoundOrNextQuestion() {
+    const nextButton = document.querySelector('.nextQuestion');
+    if (nextButton) {
+        nextButton.remove();
+    }
+
+    tryCount = 0;
+
+    if (roundFinished) {
+        resetGame();
+    } else {
+        startNextQuestion();
+    }
+}
+
+//Page load
+window.addEventListener('load', function() {
+    points = 0;
+    total = 0;
+    tryCount = 0;
+    roundFinished = false;
+    availablePlates = getPlatesForArea(area);
+
+    if (availablePlates.length === 0) {
+        if (resultDiv) {
+            resultDiv.innerText = 'No license plates available for this area.';
+        }
+        return;
+    }
+
+    startNextQuestion();
 });
 
 //User guess
-document.addEventListener('click', function(event){
-    if(event.target.id==='checkGuess' && tryCount===0){
+document.addEventListener('click', function(event) {
+    if (event.target.id === 'checkGuess' && tryCount === 0) {
         checkGuess();
     }
 
-    if(event.target.className==='nextQuestion'){
-
-        //Generar nueva matrícula (se pone encima de la anterior, o se elimina la anterior?)
-        currentPlate = getRandomLicensePlate(area);
-        drawLicensePlate(currentPlate.code, currentPlate.land);
-
-        event.target.remove();
-        tryCount=0;
+    if (event.target.className === 'nextQuestion') {
+        advanceRoundOrNextQuestion();
     }
-})
+});
 
 //Uso del enter para mayor comodidad
-document.getElementById('guess').addEventListener('keyup', handleEnterKey);
-function handleEnterKey(event) {
-    if (event.key === 'Enter' && tryCount===0) {
-      checkGuess();
-    } else if(event.key === 'Enter' && tryCount===1) {
-        currentPlate = getRandomLicensePlate(area);
-        drawLicensePlate(currentPlate.code, currentPlate.land);
+const guessElement = document.getElementById('guess');
+if (guessElement) {
+    guessElement.addEventListener('keyup', handleEnterKey);
+}
 
-        document.querySelector('.nextQuestion').remove();
-        tryCount=0;
+function handleEnterKey(event) {
+    if (event.key === 'Enter' && tryCount === 0) {
+        checkGuess();
+    } else if (event.key === 'Enter' && tryCount === 1) {
+        advanceRoundOrNextQuestion();
     }
 }
 
 function checkGuess() {
     //To do: regexp
-    let guess= String(document.querySelector('#guess').value.trim());
+    let guess = String(document.querySelector('#guess').value.trim());
 
-    //if(guess==="") return;
-
-    if (guess.toLowerCase() === currentPlate.city.toLowerCase()){
-
+    let feedback = '';
+    if (guess.toLowerCase() === currentPlate.city.toLowerCase()) {
         points += 1;
         total += 1;
 
-        if(currentPlate.kreis.includes('Stadt')) resultDiv.innerText = `Richtig! ${currentPlate.code} gehört zu ${currentPlate.city} in der ${currentPlate.kreis} (${currentPlate.land}).`;
-        else resultDiv.innerText = `Richtig! ${currentPlate.code} gehört zu ${currentPlate.city} im ${currentPlate.kreis} (${currentPlate.land}).`;
+        if (currentPlate.kreis.includes('Stadt')) feedback = `Richtig! ${currentPlate.code} gehört zu ${currentPlate.city} in der ${currentPlate.kreis} (${currentPlate.land}).`;
+        else feedback = `Richtig! ${currentPlate.code} gehört zu ${currentPlate.city} im ${currentPlate.kreis} (${currentPlate.land}).`;
+    } else {
+        total += 1;
+        if (currentPlate.kreis.includes('Stadt')) feedback = `Falsch. ${currentPlate.code} gehört zu ${currentPlate.city} in der ${currentPlate.kreis} (${currentPlate.land}).`;
+        else feedback = `Falsch. ${currentPlate.code} gehört zu ${currentPlate.city} im ${currentPlate.kreis} (${currentPlate.land}).`;
     }
-    else {
-        total +=1;
-        if(currentPlate.kreis.includes('Stadt')) resultDiv.innerText = `Falsch. ${currentPlate.code} gehört zu ${currentPlate.city} in der ${currentPlate.kreis} (${currentPlate.land}).`;
-        else resultDiv.innerText = `Falsch. ${currentPlate.code} gehört zu ${currentPlate.city} im ${currentPlate.kreis} (${currentPlate.land}).`;
-    };
 
     showFlag();
-    showButton();
     showPoints();
     showPercentage();
 
+    if (availablePlates.length === 0) {
+        roundFinished = true;
+        const percentage = ((points / total) * 100).toFixed(2);
+        resultDiv.innerText = `Alle Kennzeichen gezeigt! Endergebnis: ${points} / ${total} (${percentage}%).`;
+    } else {
+        resultDiv.innerText = feedback;
+    }
+
+    showButton();
     tryCount++;
 }
 
-function getRandomLicensePlate(area) {
-
-    let filteredPlates = [];
-
-    if(area != "Deutschland"){
-
-        for (possiblePlate of licensePlates) {
-            if (possiblePlate.land === area) filteredPlates.push(possiblePlate);
-        }
-
-    } else filteredPlates = licensePlates;
-
-    /*
-    if (filteredPlates.length === 0) {
-        document.getElementById('result').innerText = 'No license plates available for this area.';
-        return;
+function getRandomLicensePlate() {
+    if (availablePlates.length === 0) {
+        return null;
     }
-    */
 
-    const randomIndex = Math.floor(Math.random() * filteredPlates.length);
-    selectedPlate = filteredPlates[randomIndex];
+    const randomIndex = Math.floor(Math.random() * availablePlates.length);
+    const [selectedPlate] = availablePlates.splice(randomIndex, 1);
 
     return selectedPlate;
 }
 
-
 /*Functions for drawing license plate and updating ui*/
 
 const loadCustomFont = async () => {
-    const font = new FontFace('platefont', 'url(../../fonts/EuroPlate.ttf)');
-    await font.load();
-    document.fonts.add(font);
+    try {
+        const font = new FontFace('platefont', 'url(../../fonts/EuroPlate.ttf)');
+        const loadedFont = await font.load();
+        document.fonts.add(loadedFont);
+    } catch (error) {
+        console.warn('Custom font could not be loaded, using fallback font.', error);
+    }
 };
 
-async function drawLicensePlate(code, land)
-{
-  await loadCustomFont();
+async function drawLicensePlate(code, land) {
+    await loadCustomFont();
 
-  const canvas = document.getElementById('license-plate-canvas');
-  const ctx = canvas.getContext('2d');
-  const img = new Image();
-  img.src = '../../images/plates/'+land+'.png';
+    const canvas = document.getElementById('license-plate-canvas');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        const img = new Image();
+        img.src = '../../images/plates/' + land + '.png';
 
-  img.onload = function () {
-    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-    ctx.font = '83px "platefont"';
-    ctx.fillStyle = 'black';
-    ctx.textAlign = 'center';
-    ctx.fillText(code, 140, 80);
-  };
+        img.onload = function () {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            ctx.font = '83px "platefont", sans-serif';
+            ctx.fillStyle = 'black';
+            ctx.textAlign = 'center';
+            ctx.fillText(code, 140, 80);
+        };
+    }
 
-  const imageContainer = document.getElementById('image-container');
-  imageContainer.textContent = "";
+    const imageContainer = document.getElementById('image-container');
+    if (imageContainer) {
+        imageContainer.textContent = '';
+    }
 
-  document.getElementById('guess').value = '';
-  document.getElementById('result').innerText = '';
+    document.getElementById('guess').value = '';
+    document.getElementById('result').innerText = '';
 
-  document.getElementById('guess').style.display = 'inline';
-  const einreichenButton = document.querySelector('button[onclick="checkGuess()"]');
+    document.getElementById('guess').style.display = 'inline';
+    const einreichenButton = document.querySelector('button[onclick="checkGuess()"]');
 
-  if (einreichenButton) {
-      einreichenButton.style.display = 'inline';
-  }
+    if (einreichenButton) {
+        einreichenButton.style.display = 'inline';
+    }
 
-  //User can guess instantly after updating the plate
-  guessInput.focus();
+    //User can guess instantly after updating the plate
+    if (guessInput) {
+        guessInput.focus();
+    }
 }
-
 
 /*Functions to update page*/
 function updatePage(area) {
@@ -883,13 +951,10 @@ function updatePage(area) {
     }
 }
 
-function showPoints()
-{
-  const pointsDiv = document.getElementById('points');
-
-  pointsString = points.toString() + ' / ' + total.toString();
-
-  pointsDiv.innerText = pointsString;
+function showPoints() {
+    const pointsDiv = document.getElementById('points');
+    pointsString = points.toString() + ' / ' + total.toString();
+    pointsDiv.innerText = pointsString;
 }
 
 function showPercentage() {
@@ -913,37 +978,33 @@ function getColorFromPercentage(percentage) {
     return `rgb(${red}, ${green}, 0)`;
 }
 
-function showFlag()
-{
-  const imageContainer = document.getElementById('image-container');
+function showFlag() {
+    const imageContainer = document.getElementById('image-container');
 
-  imageContainer.textContent = "";
+    imageContainer.textContent = '';
 
-  const newImage = document.createElement('img');
+    const newImage = document.createElement('img');
 
-  newImage.src = `../../images/flags/${currentPlate.land}.png`;
+    newImage.src = `../../images/flags/${currentPlate.land}.png`;
 
-  newImage.style.marginTop = '10px';
-  newImage.style.width = '83px';
-  newImage.style.height = '50px';
+    newImage.style.marginTop = '10px';
+    newImage.style.width = '83px';
+    newImage.style.height = '50px';
 
-  imageContainer.appendChild(newImage);
+    imageContainer.appendChild(newImage);
 }
 
+function showButton() {
+    const newButton = document.createElement('button');
 
-function showButton()
-{
-  const newButton = document.createElement('button');
+    newButton.textContent = roundFinished ? 'Neu starten' : 'Nächstes Kfz-Kennzeichen';
+    newButton.style.marginTop = '10px';
+    newButton.style.padding = '10px';
+    newButton.className = 'nextQuestion';
 
-  newButton.textContent = 'Nächstes Kfz-Kennzeichen';
-  newButton.style.marginTop = '10px';
-  newButton.style.padding = '10px';
-  newButton.className = 'nextQuestion';
-
-  const buttonContainer = document.getElementById('button-container');
-  buttonContainer.appendChild(newButton);
+    const buttonContainer = document.getElementById('button-container');
+    buttonContainer.appendChild(newButton);
 }
-
 /*Light mode */
 document.addEventListener('DOMContentLoaded', () => {
     const switchElement = document.getElementById('colorSwitch');
