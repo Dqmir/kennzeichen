@@ -18,20 +18,6 @@ body {
   transition: background-color 0.5s;
 }
 
-#bundeslaendermap {
-  position: relative;
-  height: fit-content;
-
-  margin-top: 30px;
-  margin-left: 5px;
-}
-
-img#mapImage {
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 1 / 1.352;
-}
-
 main a.alleButton{
   position: relative;
   width: 70%;
@@ -50,15 +36,23 @@ div.menu{
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
+  /*background-color: #0a0a0a;*/
 }
 
-nav {
+nav{
   width: 100%;
-  background-color: #ccc;
+  background-image: linear-gradient(black, rgba(24, 24, 24, 0.8));
 }
 
 footer {
   width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  background-image: linear-gradient(0deg, black, rgba(24, 24, 24, 0.8));
 }
 
 a {
@@ -68,7 +62,20 @@ a {
 
 /*Media Queries*/
 
-@media (min-width: 1024px){
+@media (min-width: 1536px){
+  #bundeslaendermap75,
+  #bundeslaendermap60,
+  #bundeslaendermap45 {
+    display: none;
+  }
+
+  #bundeslaendermap100 {
+    display: block;
+    visibility: visible;
+    text-align: center;
+    margin-left: 300px;
+  }
+
   /*Se cambia al título de Desktop*/
   div.titleMobileDiv {
     display: none;
@@ -81,11 +88,11 @@ a {
     position: fixed;
     top: 0;
     z-index: 1;
-    background-color: #ccc;
   }
 
   nav {
-    color: #181818;
+    color: white;
+    height: 40px;
   }
 
   body {
@@ -95,8 +102,8 @@ a {
   }
 
   main {
-    max-width: 1000px;
-    margin-top: 100px;
+    max-width: 2048px;
+    margin-top: 90px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -104,35 +111,143 @@ a {
     position: relative;
   }
 
-  .titleDesktop{
-    width: 250px;
-  } 
-
   .brdLogoContainerDesktop img{
-    width: 400px;
-    height: 400px; 
+    width: 320px;
+    height: 386px;
     position: absolute;
+    margin-top: 120px;
     top: 0;
-    left: -3.5%; 
-    opacity: 0.3; 
-    transform: rotate(-45deg);
+    left: 60px;
+    opacity: 0.4;
+    z-index: 0;
+    transform: rotate(45deg);
   }
 
-  /*Map*/
-  #bundeslaendermap {
-    width: 35%;
-    margin: 0;
+  .titleDesktop{
+    margin-top: 200px;
+    width: 500px;
+    z-index: 1;
+    font-size: 28px;
+  }
+
+  main a.alleButton{
+    width: 300px;
+    position: absolute;
+    bottom: 60px;
+    left: 80px;
+    z-index: 3;
+  }
+
+  footer{
+    position: absolute;
+    bottom: 0px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1536px){
+
+  #bundeslaendermap100,
+  #bundeslaendermap60,
+  #bundeslaendermap45 {
+    display: none;
+  }
+
+  #bundeslaendermap75 {
+    display: block;
+    visibility: visible;
+    text-align: center;
+    margin-left: 200px;
+  }
+
+  /*Se cambia al título de Desktop*/
+  div.titleMobileDiv {
+    display: none;
+  }
+
+  /*Nav, menu*/
+  nav div.menu{
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main {
+    max-width: 1024px;
+    margin-top: 90px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+  }
+
+  nav {
+    color: white;
+    height: 40px;
+  }
+
+  .brdLogoContainerDesktop img{
+    width: 250px;
+    height: 303px;
+    position: absolute;
+    margin-top: 50px;
+    top: 0;
+    left: 60px;
+    opacity: 0.4;
+    z-index: 0;
+    transform: rotate(45deg);
+  }
+
+  .titleDesktop{
+    margin-top: 120px;
+    width: 400px;
+    z-index: 1;
+    font-size: 22px;
   }
 
   main a.alleButton{
     width: 250px;
     position: absolute;
-    bottom: 25px;
-    left: 20%;
+    bottom: 100px;
+    left: 60px;
+    z-index: 3;
+  }
+
+  footer{
+    position: absolute;
+    bottom: 0px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px){
+
+  #bundeslaendermap100,
+  #bundeslaendermap75,
+  #bundeslaendermap45 {
+    display: none;
+  }
+
+  #bundeslaendermap60 {
+    display: block;
+    visibility: visible;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 100px;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   /*Se cambia al título de Desktop*/
   div.titleMobileDiv {
     display: none;
@@ -143,20 +258,21 @@ a {
     height: 30px;
   }
 
-  nav {
-    color: #181818;
-  }
-
   nav div.menu {
     position: fixed;
     top: 0;
-    z-index: 1;
-    background-color: #ccc;
+    z-index: 2;
+  }
+
+  nav {
+    color: white;
+    height: 40px;
   }
 
   /*Main*/
   main {
-    margin-top: 50px;
+    max-width: 768px;
+    margin-top: 30px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -166,35 +282,33 @@ a {
 
   /*Desktop title*/
   .titleDesktop{
-    width: 250px;
-  } 
+    width: 300px;
+    z-index: 1;
+    margin-top: 120px;
+  }
 
   .brdLogoContainerDesktop img{
-    width: 300px;
-    height: 300px; 
-    position: fixed;
-    top: 0;
-    left: -7.5%; 
-    opacity: 0.3;
-  }
-
-  /*Map*/
-  /*La anchura del bundeslaendermap debe ser proporcional a las coordenadas del mismo*/
-  #bundeslaendermap {
-    width: 239px;
-    margin: 0;
-  }
-
-  /*La anchura del mapImage da igual*/
-  #mapImage {
-    width: 100px;
+    position: absolute;
+    width: 200px;
+    height: 243px;
+    opacity: 0.4;
+    left: 40px;
+    margin-top: 60px;
+    transform: rotate(45deg);
+    z-index: 0;
   }
 
   main a.alleButton{
     width: 250px;
     position: absolute;
-    bottom: 25px;
-    left: 12%;
+    bottom: 40px;
+    left: 20px;
+    z-index: 3;
+  }
+
+  footer{
+    position: absolute;
+    bottom: 0px;
   }
 }
 
@@ -208,7 +322,8 @@ a {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #ccc;
+    /*background-color: #101010;*/
+    background-image: linear-gradient(#090909, #121212);
   }
 
   header div.titleMobileDiv {
@@ -245,7 +360,7 @@ a {
   header div.brdLogoMobile img{
     width: 100%;
   }
-  
+
   /*Nav, menu*/
   div.menu{
     height: 30px;
@@ -254,14 +369,14 @@ a {
   nav {
     width: 100%;
     display: unset;
-    background-color: #ccc;
   }
 
   nav div.menu {
     position: sticky;
     top: 0;
     z-index: 1;
-    background-color: #ccc;
+    /*background-color: #141414;*/
+    background-image: linear-gradient(#121212,#181818);
   }
 
   /*Main*/
@@ -280,13 +395,51 @@ a {
 }
 
 @media (min-width: 500px) and (max-width: 768px) {
-  #bundeslaendermap {
-  width: 60%;
+  #bundeslaendermap100,
+  #bundeslaendermap75,
+  #bundeslaendermap45 {
+    display: none;
+  }
+
+  #bundeslaendermap60 {
+    display: block;
+    visibility: visible;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  main a.alleButton{
+    width: 250px;
+    margin-bottom: 30px;
+  }
+
+  footer{
+    position:absolute;
+    bottom: 0px;
   }
 }
 
 @media (max-width: 500px) {
-  #bundeslaendermap {
-  width: 75%;
+  #bundeslaendermap100,
+  #bundeslaendermap75,
+  #bundeslaendermap60 {
+    display: none;
+  }
+
+  #bundeslaendermap45 {
+    display: block;
+    visibility: visible;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  main a.alleButton{
+    width: 200px;
+    margin-bottom: 30px;
+  }
+
+  footer{
+    position:absolute;
+    bottom: 0px;
   }
 }
